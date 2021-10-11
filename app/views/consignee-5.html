@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/consignee-4">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Consignee address</h1>
+
+      <form class="form" action="/consignee-6" method="post">
+
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+        {{ govukTextarea({
+          name: "address",
+          id: "address",
+          autocomplete: "street-address",
+          label: {
+    text: "Address"
+  }
+        }) }}
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+  {{ govukInput({
+    label: {
+      text: "Country"
+    },
+    classes: "govuk-input--width-20",
+    id: "width-20",
+    name: "width-20"
+  }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/end-use-4">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Who is the end-user?</h1>
+
+      <p>You can add a new end-user, or if you've included them on applications in the past, you can reuse their details to save time.</p>
+
+      <form class="form" action="/end-user-2" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "ee-exiting-party",
+    name: "ee-exiting-party",
+    fieldset: {
+    legend: {
+    isPageHeading: true,
+    classes: "govuk-fieldset__legend--l"
+    }
+    },
+        items: [
+            {
+              value: "yes",
+              text: "Add an existing end-user"
+            },
+            {
+              value: "No",
+              text: "Add a new end-user"
+            }
+          ]
+        }) }}
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Help with the end-user
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p>An end-user receives the products in the destination country. They either use the products themselves, resell from stock, or export them again to another country.</p>
+        </details>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

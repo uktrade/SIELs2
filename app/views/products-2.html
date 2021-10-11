@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/products-1">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Select the type of firearm product</h1>
+
+      <form class="form" action="/products-2-answer" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "type-of-firearm-product",
+          name: "type-of-firearm-product",
+          fieldset: {
+            legend: {
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "firearm",
+              text: "Firearm"
+            },
+            {
+              value: "ammunition",
+              text: "Ammunition"
+            },
+            {
+              value: "component",
+              text: "Component"
+            },
+            {
+              value: "component-of-firearm-ammunition",
+              text: "Component of ammunition"
+            },
+            {
+              value: "accessory",
+              text: "Accessory"
+            },
+            {
+                value: "software-or-technology-relating-to-a-firearm",
+                text: "Related software or technology"
+              }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

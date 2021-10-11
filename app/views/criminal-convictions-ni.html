@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/task-list">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Criminal convictions</h1>
+
+    <p class="govuk-body">Has anyone relating to the application been convicted of either:</p>
+    <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+      <li>a criminal offence resulting&nbsp;in 4 years or more in prison?</li>
+      <li>an offence under part of the European Arrest Warrant?</li>
+      </ul>
+
+      <p>This includes you, anyone in your organisation, or anyone who has powers of representation, decision or control.</p>
+
+      <form class="form" action="/criminal-convictions-2" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "cc-gb",
+name: "cc-gb",
+fieldset: {
+  legend: {
+    isPageHeading: true,
+    classes: "govuk-fieldset__legend--l"
+  }
+},
+
+        items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Which part of the European Arrest Warrant?
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+  Specifically, an offence within the meaning of Article 2(2) of Council Framework Decision 2002/584/JHA of 13 June 2002 of the European Arrest Warrant and the surrender procedures between Member States (as amended by Council Framework Decision 2009/299/JHA of 26 February 2009)?
+              </div>
+        </details>
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,142 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/task-list">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+    <h1 class="govuk-heading-xl">Product summary</h1>
+
+  <dl class="govuk-summary-list govuk-!-margin-bottom-9" id="good-detail-summary">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Name
+      </dt>
+      <dd class="govuk-summary-list__value">
+        AX50 ELR rifle
+      </dd>
+      <dd class="govuk-summary-list__actions">
+      </dd>
+    </div>
+
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Year of manufacture
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+              2007
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+
+              <a id="change-is-sporting-shotgun" class="govuk-link govuk-link--no-visited-state" href="/applications/45cf442d-550e-4ee7-91ac-2359cf97549d/goods/f727aaaf-0ea6-488f-b61c-1cdaf171ecad/edit-firearm-details/sporting-shotgun/">Change <span class="govuk-visually-hidden">Sporting shotgun</span></a>
+
+          </dd>
+        </div>
+
+
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Will it be incorporated?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        No
+      </dd>
+      <dd class="govuk-summary-list__actions">
+
+          <a id="change-good-name" class="govuk-link govuk-link--no-visited-state" href="/applications/45cf442d-550e-4ee7-91ac-2359cf97549d/goods/add-new/f727aaaf-0ea6-488f-b61c-1cdaf171ecad/edit-good/#name">Change</a>
+
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Is it deactivated?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        No
+      </dd>
+      <dd class="govuk-summary-list__actions">
+
+          <a id="change-good-description" class="govuk-link govuk-link--no-visited-state" href="/applications/45cf442d-550e-4ee7-91ac-2359cf97549d/goods/add-new/f727aaaf-0ea6-488f-b61c-1cdaf171ecad/edit-good/#description">Change</a>
+
+      </dd>
+    </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Proof marks
+      </dt>
+      <dd class="govuk-summary-list__value">
+      Yes
+      </dd>
+      <dd class="govuk-summary-list__actions">
+
+          <a id="change-part-number" class="govuk-link govuk-link--no-visited-state" href="/applications/45cf442d-550e-4ee7-91ac-2359cf97549d/goods/add-new/f727aaaf-0ea6-488f-b61c-1cdaf171ecad/edit-good/#part_number">Change</a>
+
+      </dd>
+    </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Quantity
+      </dt>
+
+        <dd class="govuk-summary-list__value">
+          4
+        </dd>
+
+      <dd class="govuk-summary-list__actions">
+
+          <a id="change-good-controlled" class="govuk-link govuk-link--no-visited-state" href="/applications/45cf442d-550e-4ee7-91ac-2359cf97549d/goods/add-new/f727aaaf-0ea6-488f-b61c-1cdaf171ecad/edit-good/#pane_is_good_controlled">Change</a>
+
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Total value
+      </dt>
+      <dd class="govuk-summary-list__value">
+        £32,000
+      </dd>
+      <dd class="govuk-summary-list__actions">
+
+          <a id="change-good-grading" class="govuk-link govuk-link--no-visited-state" href="/applications/45cf442d-550e-4ee7-91ac-2359cf97549d/goods/add-new/f727aaaf-0ea6-488f-b61c-1cdaf171ecad/edit-grading/">Change</a>
+
+      </dd>
+    </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Serial numbers
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Yes, I will add later
+            </dd>
+            <dd class="govuk-summary-list__actions">
+
+                <a id="change-year-of-manufacture" class="govuk-link govuk-link--no-visited-state" href="/applications/45cf442d-550e-4ee7-91ac-2359cf97549d/goods/f727aaaf-0ea6-488f-b61c-1cdaf171ecad/edit-firearm-details/year-of-manufacture/">Change <span class="govuk-visually-hidden">Year of manufacture</span></a>
+
+            </dd>
+          </div>
+        </div>
+
+
+      <form action="/products-1" method="post" novalidate>
+
+        <input type="hidden" name="products-firearm-summary" value="true">
+
+  <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+{% endblock %}

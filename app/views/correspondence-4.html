@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/correspondence-3">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Have you been told the products may be used in chemical, biological or nuclear weapons?</h1>
+
+      <p>This includes use in missiles capable of delivering chemical, nuclear or biological weapons.</p>
+
+      <form class="form" action="/correspondence-summary" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% set noHtml %}
+{{ govukInput({
+  id: "enter-reference",
+  name: "enter-reference",
+  type: "no",
+  autocomplete: "no",
+  spellcheck: false,
+  classes: "govuk-label--1",
+  label: {
+    text: "Enter the reference from the letter or email"
+  }
+}) }}
+{% endset -%}
+
+{{ govukRadios({
+  idPrefix: "ecju-cbn",
+  name: "ecju-cbn",
+  fieldset: {
+    legend: {
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "Yes",
+      text: "Yes",
+      conditional: {
+        html: noHtml
+      }
+    },
+    {
+      value: "No",
+      text: "No"
+    }
+  ]
+}) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

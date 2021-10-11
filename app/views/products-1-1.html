@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/task-list">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+      <h1 class="govuk-heading-xl">Products for export</h1>
+
+      <p> Where possible, please add items in the same order as they are shown on the end user undertaking document. This will help case officers process applications quickly.</p>
+
+      <form class="form" action="/task-list" method="post">
+
+        <div class="lite-app-bar__controls">
+    				<a id="button-add-new-good" href="/products-2" role='button' draggable='false' class='govuk-button'>Add a new product</a>
+    				<a id="button-add-preexisting-good" href="/task-list" role='button' draggable='false' class='govuk-button'>Add a product from your saved products list</a>
+    			</div>
+<br>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

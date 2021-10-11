@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/task-list">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Who is the third party?</h1>
+
+      <p>This is known as the third party. You can add a new end third party, or if you've included them on applications in the past, you can reuse their details to save time.</p>
+
+      <form class="form" action="/third-party-2" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "third-party-exiting-party",
+    name: "third-party-exiting-party",
+    fieldset: {
+    legend: {
+    isPageHeading: true,
+    classes: "govuk-fieldset__legend--l"
+    }
+    },
+        items: [
+            {
+              value: "yes",
+              text: "Add an existing third party"
+            },
+            {
+              value: "No",
+              text: "Add a new third party"
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/products-firearm-7">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Upload a registered firearms dealer certificate</h1>
+
+    <p>The file must be smaller than 50MB.</p>
+
+      <form class="form" action="/products-firearm-s5" method="post">
+
+        {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+  {{ govukFileUpload({
+    id: "file-upload-1",
+    name: "file-upload-1",
+    label: {
+      text: "Upload a file"
+    }
+  }) }}
+
+
+  {% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+    text: "Certificate number"
+  },
+  classes: "govuk-input--width-20",
+  id: "event-name",
+  name: "event-name"
+}) }}
+
+{{ govukDateInput({
+  id: "rfd-expiry",
+  namePrefix: "rfd-expiry",
+  fieldset: {
+    legend: {
+      text: "Expiry date"
+    }
+  },
+  hint: {
+    text: "For example, 27 3 2023"
+  }
+}) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

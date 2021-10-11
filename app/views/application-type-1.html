@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Question page
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="/task-list">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Select the type of application you need</h1>
+
+    <p class="govuk-body">Use <a class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank" href="https://www.spire.trade.gov.uk">SPIRE</a> to apply for:<ul class="govuk-list govuk-list--bullet govuk-!-margin-top-2"><li>transhipment licences</li><li>trade control licences</li><li>MOD clearances</li></ul>
+
+      <form class="form" action="/licence-type-1" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+  {{ govukRadios({
+    items: [
+      {
+        value: "Export licence",
+        text: "Export licence",
+        hint: {
+        text: "Send products from the UK to another country or give access to controlled technology, software or data."
+      }
+      },
+      {
+        value: "Transhipment licence",
+        text: "Transhipment licence",
+        disabled: "true"
+      },
+      {
+        value: "Trade control licence",
+        text: "Trade control licence",
+        disabled: "true"
+      },
+      {
+        value: "MOD clearance",
+        text: "MOD clearance",
+        disabled: "true"
+      }
+    ]
+  }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+  {% endblock %}

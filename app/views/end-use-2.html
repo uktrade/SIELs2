@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/end-use-1">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Will the products be used in connection with chemical, biological or nuclear weapons?</h1>
+
+<p>This includes being used for missiles capable of delivering chemical, nuclear or biological weapons.
+
+      <form class="form" action="/end-use-3" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "end-use-cbn",
+    name: "end-use-cbn",
+    fieldset: {
+    legend: {
+    isPageHeading: true,
+    classes: "govuk-fieldset__legend--l"
+    }
+    },
+        items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

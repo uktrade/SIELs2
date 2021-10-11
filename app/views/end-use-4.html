@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/end-use-3">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Have you complied with the terms of the export limitations?</h1>
+
+      <p>Or where appropriate, have you obtained the required consent from the originating EU country?</p>
+
+      <form class="form" action="/end-user-1" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+{% set noHtml %}
+{{ govukTextarea({
+  id: "explain-why",
+  name: "explain-why",
+  type: "no",
+  autocomplete: "no",
+  spellcheck: false,
+  classes: "govuk-label--1",
+  label: {
+    text: "Explain why not"
+  }
+}) }}
+{% endset -%}
+
+        {{ govukRadios({
+          idPrefix: "complied",
+    name: "complied",
+    fieldset: {
+    legend: {
+    isPageHeading: true,
+    classes: "govuk-fieldset__legend--l"
+    }
+    },
+        items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No",
+              conditional: {
+                html: noHtml
+              }
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

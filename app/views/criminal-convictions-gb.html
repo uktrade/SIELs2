@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/task-list">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Criminal convictions</h1>
+
+      <p>Has anyone relating to the application been convicted of a criminal offence resulting in 4 years or more in prison?</p>
+
+      <p>This includes you, anyone in your organisation, or anyone who has powers of representation, decision or control.</p>
+
+      <form class="form" action="/criminal-convictions-2" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "cc-gb",
+name: "cc-gb",
+fieldset: {
+  legend: {
+    isPageHeading: true,
+    classes: "govuk-fieldset__legend--l"
+  }
+},
+
+        items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+        }) }}
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

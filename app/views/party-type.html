@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/task-list">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Select the type of end user</h1>
+
+      <form class="form" action="/url/of/next/page" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% set otherHtml %}
+{{ govukInput({
+  id: "other",
+  name: "contact-by-email",
+  type: "other",
+  autocomplete: "other",
+  spellcheck: false,
+  classes: "govuk-input--width-20"
+}) }}
+{% endset -%}
+
+  {{ govukRadios({
+    idPrefix: "where-do-you-live",
+    name: "where-do-you-live",
+    fieldset: {
+      legend: {
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
+      }
+    },
+    items: [
+      {
+        value: "Government",
+        text: "Government"
+      },
+      {
+        value: "Commercial-organisation",
+        text: "Commercial organisation"
+      },
+      {
+        value: "Individual",
+        text: "Individual"
+      },
+      {
+        divider: "or"
+      },
+      {
+        value: "Other",
+        text: "Other",
+        conditional: {
+        html: otherHtml
+      }
+      }
+    ]
+  }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

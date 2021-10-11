@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/task-list">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Any supporting documents</h1>
+
+      <p class="govuk-body">Do not attach a document that's above OFFICIAL-SENSITIVE.</p>
+      <p>The file must be smaller than 50MB.</p>
+
+      <form class="form" action="/task-list" method="post">
+
+        {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+{{ govukFileUpload({
+  id: "file-upload-supporting-doc",
+  name: "file-upload-supporting-doc"
+}) }}
+
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+        {{ govukTextarea({
+          name: "doc-description",
+          id: "doc-description",
+          autocomplete: "doc-description",
+          label: {
+        classes: "govuk-label--l"
+  },
+  hint: {
+    text: "Description"
+  }
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Submit</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

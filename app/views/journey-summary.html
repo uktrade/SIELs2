@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/journey-5">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+    <h1 class="govuk-heading-xl">Journey summary</h1>
+
+  <dl class="govuk-summary-list govuk-!-margin-bottom-9" id="good-detail-summary">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Permanent export
+      </dt>
+      <dd class="govuk-summary-list__value">
+        No, temporary
+      </dd>
+      <dd class="govuk-summary-list__actions">
+      </dd>
+    </div>
+
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Products remain under control
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+              Yes
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+
+              <a id="change-is-sporting-shotgun" class="govuk-link govuk-link--no-visited-state" href="/applications/45cf442d-550e-4ee7-91ac-2359cf97549d/goods/f727aaaf-0ea6-488f-b61c-1cdaf171ecad/edit-firearm-details/sporting-shotgun/">Change <span class="govuk-visually-hidden">Sporting shotgun</span></a>
+
+          </dd>
+        </div>
+
+
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Proposed return date
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Yes
+      </dd>
+      <dd class="govuk-summary-list__actions">
+
+          <a id="change-good-name" class="govuk-link govuk-link--no-visited-state" href="/applications/45cf442d-550e-4ee7-91ac-2359cf97549d/goods/add-new/f727aaaf-0ea6-488f-b61c-1cdaf171ecad/edit-good/#name">Change</a>
+
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Air waybill or bill of lading
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Yes
+      </dd>
+      <dd class="govuk-summary-list__actions">
+
+          <a id="change-good-description" class="govuk-link govuk-link--no-visited-state" href="/applications/45cf442d-550e-4ee7-91ac-2359cf97549d/goods/add-new/f727aaaf-0ea6-488f-b61c-1cdaf171ecad/edit-good/#description">Change</a>
+
+      </dd>
+    </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        How products are being exported
+      </dt>
+      <dd class="govuk-summary-list__value">
+      To end user via consignee
+      </dd>
+      <dd class="govuk-summary-list__actions">
+
+          <a id="change-part-number" class="govuk-link govuk-link--no-visited-state" href="/applications/45cf442d-550e-4ee7-91ac-2359cf97549d/goods/add-new/f727aaaf-0ea6-488f-b61c-1cdaf171ecad/edit-good/#part_number">Change</a>
+
+      </dd>
+    </div>
+        </div>
+
+
+      <form action="/task-list" method="post" novalidate>
+
+        <input type="hidden" name="products-firearm-summary" value="true">
+
+  <button class="govuk-button" data-module="govuk-button">Submit</button>
+
+      </form>
+
+{% endblock %}

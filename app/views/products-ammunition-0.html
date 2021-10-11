@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/products-2">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Is this ammunition for any of the following?</h1>
+
+      <form class="form" action="/products-firearm-1" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "type-of-firearm-product",
+          name: "type-of-firearm-product",
+          fieldset: {
+            legend: {
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "non-automatic-shotgun",
+              text: "Non automatic shotgun"
+            },
+            {
+              value: "non-automatic-rim-fired-rifle",
+              text: "Non automatic rim-fired rifle"
+            },
+            {
+              value: "non-automatic-rim-fired-handgun",
+              text: "Non automatic rim-fired handgun"
+            },
+            {
+              value: "rifle-pre-1938",
+              text: "Rifle made before 1938"
+            },
+            {
+              value: "combination-gun-made-before-1938",
+              text: "Combination gun made before 1938"
+            },
+            {
+      divider: "or"
+    },
+            {
+                value: "none",
+                text: "None of the above"
+              }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
