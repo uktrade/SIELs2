@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="/end-user-6">Back</a>
+  <a class="govuk-back-link" href="/end-user-7-0">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -14,9 +14,6 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">Upload an end-user document</h1>
-
-      <p class="govuk-body">Upload an <a href="https://www.gov.uk/government/publications/end-user-undertaking-euu-form"> end-user undertaking (EUU)</a> or <a href="https://www.gov.uk/government/publications/stockist-undertaking-su-form">stockist undertaking (SU)</a>. The documents must be on company headed paper.</p>
-      <p> Products listed on the end-user document should match as closely as possible to the products listed in the application.</p>
 
       <form class="form" action="/end-user-7-answer" method="post">
 
@@ -41,7 +38,7 @@
       text: "Describe any differences between products listed in the document and products on the application (optional)"
     }
   }) }}
-  
+
 {{ govukRadios({
   idPrefix: "in-english",
   name: "in-english",

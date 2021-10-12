@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/end-user-6">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">End-user documents</h1>
+
+      <p class="govuk-body">You will be asked to upload either an <a href="https://www.gov.uk/government/publications/end-user-undertaking-euu-form"> end-user undertaking (EUU)</a> or <a href="https://www.gov.uk/government/publications/stockist-undertaking-su-form">stockist undertaking (SU)</a>.</p>
+        <p>The documents must be on company headed paper and should be completed by the end-user or stockist.</p>
+      <p> Products listed in the document should match as closely as possible to the products listed in the application.</p>
+      <p> All products on the application must appear in the document.</p>
+
+      <form class="form" action="/end-user-7" method="post">
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
