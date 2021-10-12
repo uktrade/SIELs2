@@ -222,7 +222,7 @@ router.post('/end-user-7-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (inenglish == "Yes"){
     // Send user to next page
-    res.redirect('/end-user-summary')
+    res.redirect('/end-user-9')
   }
     if (inenglish == "No"){
       // Send user to next page
@@ -246,6 +246,43 @@ router.post('/end-use-3-answer', function (req, res) {
     if (transferlicence == "No"){
       // Send user to next page
       res.redirect('/end-user-1')
+    }
+})
+
+
+
+// Run this code when a form is submitted to 'end-user-9'
+router.post('/end-user-9-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'end-user-9'
+  var coverinenglish = req.session.data['cover-in-english']
+
+  // Check whether the variable matches a condition
+  if (coverinenglish == "Yes"){
+    // Send user to next page
+    res.redirect('/end-user-summary')
+  }
+    if (coverinenglish == "No"){
+      // Send user to next page
+      res.redirect('/end-user-10')
+    }
+})
+
+
+// Run this code when a form is submitted to 'product-firearms-3'
+router.post('/products-firearm-3-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'product-firearms-3'
+  var securitygrading = req.session.data['security-grading']
+
+  // Check whether the variable matches a condition
+  if (securitygrading == "Yes"){
+    // Send user to next page
+    res.redirect('/products-firearm-4')
+  }
+    if (securitygrading == "No"){
+      // Send user to next page
+      res.redirect('/products-firearm-5')
     }
 })
 

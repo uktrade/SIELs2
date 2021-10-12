@@ -15,8 +15,11 @@
 
       <h1 class="govuk-heading-xl">Upload an end-user document</h1>
 
-      <p class="govuk-body">Upload an <a href="https://www.gov.uk/government/publications/end-user-undertaking-euu-form"> end-user undertaking (EUU)</a> or <a href="https://www.gov.uk/government/publications/stockist-undertaking-su-form">stockist undertaking (SU)</a>. The documents must be on company headed paper.</p>
-      <p> Products listed on the end-user document should match as closely as possible to the products listed in the application.</p>
+      <p class="govuk-body">Upload an <a href="https://www.gov.uk/government/publications/end-user-undertaking-euu-form"> end-user undertaking (EUU)</a> or <a href="https://www.gov.uk/government/publications/stockist-undertaking-su-form">stockist undertaking (SU).</a></p>
+
+<p>When the end-user is a government, you can attach a purchase order instead of an EUU or SU.</p>
+
+<p>Files must be smaller than 50MB.</p>
 
       <form class="form" action="/end-user-7-answer" method="post">
 
@@ -30,18 +33,16 @@
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
 
-{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% set noHtml %}
+{{ govukFileUpload({
+  id: "file-upload-not-english",
+  name: "file-upload-not-english",
+  label: {
+    text: "Upload an English translation. The translated version must be on company letterhead and verified by the exporter. "
+  }
+}) }}
+{% endset -%}
 
-{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
-
-    {{ govukTextarea({
-      name: "euu description",
-      id: "euu description",
-      label: {
-      text: "Describe any differences between products listed in the document and products on the application (optional)"
-    }
-  }) }}
-  
 {{ govukRadios({
   idPrefix: "in-english",
   name: "in-english",
