@@ -15,9 +15,25 @@
 
       <h1 class="govuk-heading-xl">Will each product have a serial number or other identification marking?</h1>
 
-      <form class="form" action="/products-firearm-16-2" method="post">
+      <form class="form" action="/products-firearm-16-1-answer" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {% set noHtml %}
+        {{ govukTextarea({
+          name: "explain-sn",
+          id: "explain-sn",
+          label: {
+            text: "Explain why the product doesn't have serial numbers"
+          }
+        }) }}
+        {% endset -%}
+
+        {% set laterHtml %}
+        <div>
+          <p>You must submit the serial numbers before you can export the products. To add them later, log in to your dashboard.</p>
+          </div>
+        {% endset -%}
 
         {{ govukRadios({
           idPrefix: "sn",
@@ -36,11 +52,18 @@ fieldset: {
             },
             {
               value: "Yes-later",
-              text: "Yes, I can add serial numbers later"
+              text: "Yes, I can add serial numbers later",
+              conditional: {
+        html: laterHtml
+      }
             },
+
             {
               value: "No",
-              text: "No"
+              text: "No",
+              conditional: {
+        html: noHtml
+      }
           }
           ]
         }) }}

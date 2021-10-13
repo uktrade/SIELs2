@@ -208,7 +208,7 @@ router.post('/products-firearm-13-answer', function (req, res) {
   }
     if (deactivated == "No"){
       // Send user to next page
-      res.redirect('/products-firearm-14')
+      res.redirect('/products-firearm-15')
     }
 })
 
@@ -283,6 +283,29 @@ router.post('/products-firearm-3-answer', function (req, res) {
     if (securitygrading == "No"){
       // Send user to next page
       res.redirect('/products-firearm-5')
+    }
+})
+
+
+
+// Run this code when a form is submitted to 'product-firearms-16-1'
+router.post('/products-firearm-16-1-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'product-firearms-16-1'
+  var sn = req.session.data['sn']
+
+  // Check whether the variable matches a condition
+  if (sn == "Yes-now"){
+    // Send user to next page
+    res.redirect('/products-firearm-16-2')
+  }
+  if (sn == "Yes-later"){
+    // Send user to next page
+    res.redirect('/products-firearm-summary-part-2')
+  }
+    if (sn == "No"){
+      // Send user to next page
+      res.redirect('/products-firearm-summary-part-2')
     }
 })
 
