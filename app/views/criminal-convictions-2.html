@@ -17,7 +17,7 @@
 
       <p class="govuk-body">The PIC form tells us that the destination country is content to import the firearms.
 
-      <form class="form" action="/task-list" method="post">
+      <form class="form" action="/criminal-convictions-2-answer" method="post">
 
         {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
 
@@ -44,6 +44,29 @@
         }) }}
 
 
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+          {{ govukRadios({
+            idPrefix: "in-english",
+            name: "in-english",
+            fieldset: {
+              legend: {
+                text: "Is the end-user document in English?"
+              }
+            },
+            items: [
+              {
+                value: "Yes",
+                text: "Yes"
+              },
+              {
+                value: "No",
+                text: "No"
+              }
+            ]
+          }) }}
+
+
         <details class="govuk-details" data-module="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
@@ -52,7 +75,7 @@
   </summary>
         <div class="govuk-details__text">
         <p>You must have PIC before submitting a firearms export licence application.</p>
-        <p>Many countries do not class some weapons to be firearms so a PIC form is not issued. In this instance, an end-user undertaking form (EUU) is required. It must be submitted together with a letter or email from the relevant importing countries licensing authorities stating that a PIC or equivalent cannot be issued.</p>
+        <p>Many countries do not class some weapons to be firearms so a PIC form is not issued. In this instance, an end-user undertaking form (EUU) is sufficient. It must be submitted together with a letter or email from the relevant importing countries licensing authorities stating that a PIC or equivalent cannot be issued.</p>
       </div>
     </details>
 

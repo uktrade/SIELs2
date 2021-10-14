@@ -70,6 +70,10 @@ router.post('/products-firearm-8-answer', function (req, res) {
         // Send user to next page
         res.redirect('/products-firearm-9-5')
   }
+  if (section125 == "Not-sure"){
+    // Send user to next page
+    res.redirect('/products-firearm-10-1')
+}
 })
 
 
@@ -85,6 +89,10 @@ router.post('/products-firearm-s5-answer', function (req, res) {
     res.redirect('/products-firearm-9-5')
   }
     if (covereds5 == "No"){
+      // Send user to next page
+      res.redirect('/products-firearm-10-1')
+    }
+    if (covereds5 == "Dont-know"){
       // Send user to next page
       res.redirect('/products-firearm-10-1')
     }
@@ -306,6 +314,24 @@ router.post('/products-firearm-16-1-answer', function (req, res) {
     if (sn == "No"){
       // Send user to next page
       res.redirect('/products-firearm-summary-part-2')
+    }
+})
+
+
+// Run this code when a form is submitted to 'criminal-convitions-2'
+router.post('/criminal-convictions-2-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'criminal-convitions-2'
+  var inenglish = req.session.data['in-english']
+
+  // Check whether the variable matches a condition
+  if (inenglish == "Yes"){
+    // Send user to next page
+    res.redirect('/task-list')
+  }
+    if (inenglish == "No"){
+      // Send user to next page
+      res.redirect('/criminal-convictions-3')
     }
 })
 
