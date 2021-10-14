@@ -29,6 +29,21 @@
       }
     }) }}
 
+    {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+{{ govukDateInput({
+id: "expiry-date",
+namePrefix: "expiry-date",
+fieldset: {
+legend: {
+  text: "Expiry date"
+}
+},
+hint: {
+text: "For example, 30 9 2024"
+}
+}) }}
+
         {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
         {{ govukTextarea({
