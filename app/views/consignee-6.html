@@ -13,7 +13,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Upload a document</h1>
+      <h1 class="govuk-heading-xl">Add any supporting information about the consignee (optional)</h1>
 
       <form class="form" action="/consignee-summary" method="post">
 
@@ -27,14 +27,14 @@
         {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
         {{ govukTextarea({
-          name: "euu description",
-          id: "euu description",
-          autocomplete: "euu description",
+          name: "consignee-notes",
+          id: "consignee-notes",
+          autocomplete: "consignee-notes",
           label: {
         classes: "govuk-label--l"
   },
   hint: {
-    text: "Description"
+    text: "Notes"
   }
         }) }}
 
