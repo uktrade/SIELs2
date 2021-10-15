@@ -268,7 +268,7 @@ router.post('/end-user-9-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (coverinenglish == "Yes"){
     // Send user to next page
-    res.redirect('/end-user-summary')
+    res.redirect('/pic-1')
   }
     if (coverinenglish == "No"){
       // Send user to next page
@@ -327,7 +327,7 @@ router.post('/pic-1-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (inenglish == "Yes"){
     // Send user to next page
-    res.redirect('/task-list')
+    res.redirect('/end-user-summary')
   }
     if (inenglish == "No"){
       // Send user to next page
