@@ -318,10 +318,10 @@ router.post('/products-firearm-16-1-answer', function (req, res) {
 })
 
 
-// Run this code when a form is submitted to 'criminal-convitions-2'
-router.post('/criminal-convictions-2-answer', function (req, res) {
+// Run this code when a form is submitted to 'pic-1'
+router.post('/pic-1-answer', function (req, res) {
 
-  // Make a variable and give it the value from 'criminal-convitions-2'
+  // Make a variable and give it the value from 'pic-1'
   var inenglish = req.session.data['in-english']
 
   // Check whether the variable matches a condition
@@ -331,7 +331,7 @@ router.post('/criminal-convictions-2-answer', function (req, res) {
   }
     if (inenglish == "No"){
       // Send user to next page
-      res.redirect('/criminal-convictions-3')
+      res.redirect('/pic-2')
     }
 })
 
