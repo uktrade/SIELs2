@@ -253,7 +253,7 @@ router.post('/end-use-3-answer', function (req, res) {
   }
     if (transferlicence == "No"){
       // Send user to next page
-      res.redirect('/end-user-1')
+      res.redirect('/end-use-summary')
     }
 })
 
