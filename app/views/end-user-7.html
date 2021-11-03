@@ -59,16 +59,25 @@
   ]
 }) }}
 
-        <details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Help with end-user documents
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    <p>The EUU or SU should be completed by the end-user or stockist.</p>
-  </div>
-</details>
+{{ govukRadios({
+  idPrefix: "letterhead",
+  name: "letterhead",
+  fieldset: {
+    legend: {
+      text: "Does the document include at least one page on company letterhead?"
+    }
+  },
+  items: [
+    {
+      value: "Yes-letterhead",
+      text: "Yes"
+    },
+    {
+      value: "No-letterhead",
+      text: "No"
+    }
+  ]
+}) }}
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 

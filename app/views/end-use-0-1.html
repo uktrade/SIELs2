@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/task-list">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Tell us about any possible end-use concerns or suspicions you have</h1>
+
+      <form class="form" action="/end-use-0-2" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+      {% set concernHtml %}
+      {{ govukTextarea({
+        id: "concern",
+        name: "concern",
+        label: {
+          text: "Explain the concern"
+        }
+      }) }}
+      {% endset -%}
+
+
+        {{ govukCheckboxes({
+              idPrefix: "any-letter",
+          name: "any-letters",
+          fieldset: {
+            legend: {
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+        items: [
+        {
+          value: "wmd",
+          text: "Products may be used in weapons of mass destruction (chemical, biological or nuclear), or in missiles capable of delivering those weapons",
+      conditional: {
+      html: concernHtml
+      }
+        },
+            {
+              value: "military",
+              text: "Products may be subject to military end-use controls",
+      conditional: {
+        html: concernHtml
+      }
+            },
+            {
+              value: "repression",
+              text: "Products may be used for internal repression or serious human rights violations",
+      conditional: {
+        html: concernHtml
+      }
+            },
+            {
+     divider: "or"
+   },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+        }) }}
+
+
+        <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Help with end-use concerns
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p>End-use concerns can apply to items not listed in the UK Strategic Export Control Lists. </p>
+    <p>Weapons of Mass Destruction (WMD) end-use catch-all control applies to items for use in connection with the development, production, handling, operation, maintenance, storage, detection, identification or dissemination of chemical, biological or nuclear weapons or other nuclear explosive devices or the development, production, maintenance or storage of missiles capable of delivering such weapons.</p>
+    <p><a href="https://www.gov.uk/guidance/supplementary-wmd-end-use-controls">Guidance on WMD end-use controls</a></p>
+    <p>The military end-use catch-all control applies if the purchasing country or country of destination is subject to an arms embargo.</p>
+    <p><a href="https://www.gov.uk/guidance/military-end-use-control-guidance-notes#extracts-from-relevant-military-end-use-controls-legislation">Guidance on military end-use controls</a></p>
+    <p>Internal repression or serious human rights end-use catch-all control applies to items that are or may be intended, in their entirety or in part, for use in connection with internal repression or the commission of serious violations of human rights and international humanitarian law.</p>
+    </div>
+</details>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

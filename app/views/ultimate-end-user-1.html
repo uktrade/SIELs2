@@ -13,11 +13,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Who is the third party?</h1>
+      <h1 class="govuk-heading-xl">Who is the ultimate end-user?</h1>
 
-      <p>You can add a new end third party, or if you've included them on applications in the past, you can reuse their details to save time.</p>
+      <p>You can add a new ultimate end-user, or if you've included them on applications in the past, you can reuse their details to save time.</p>
 
-      <form class="form" action="/third-party-2" method="post">
+      <form class="form" action="/ultimate-end-user-2" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
@@ -41,17 +41,6 @@
             }
           ]
         }) }}
-
-        <details class="govuk-details" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              Help with third parties
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-<p>A third party is involved in the export but not regarded as a consignee, end-user or ultimate end-user.</p>
-<p>For example, they might be an agent, broker, consultant or distributor.</p>
-              </details>
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 

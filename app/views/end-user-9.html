@@ -13,9 +13,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Upload a signed cover letter</h1>
+      <h1 class="govuk-heading-xl">Upload a document on company letterhead</h1>
 
-      <p>The cover letter must be on company headed paper and include the end-user name and address, licensee name and the date.</p>
+      <p>The document only needs to include the end-user's name and signature.</p>
 
       <form class="form" action="/end-user-9-answer" method="post">
 
@@ -26,40 +26,7 @@
   name: "file-upload-euu"
 }) }}
 
-        {% from "govuk/components/radios/macro.njk" import govukRadios %}
-        {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
-
-{% set noHtml %}
-{{ govukFileUpload({
-  id: "cover-not-english",
-  name: "cover-not-english",
-  label: {
-    text: "Upload an English translation. The translated version must be on company letterhead and verified by the exporter. "
-  }
-}) }}
-{% endset -%}
-
-{{ govukRadios({
-  idPrefix: "cover-in-english",
-  name: "cover-in-english",
-  fieldset: {
-    legend: {
-      text: "Is the cover letter in English?"
-    }
-  },
-  items: [
-    {
-      value: "Yes",
-      text: "Yes"
-    },
-    {
-      value: "No",
-      text: "No"
-    }
-  ]
-}) }}
-
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+              <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
 
