@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/products-component-ammunition-2">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Does the product have a government security grading or classification?</h1>
+
+      <p>For example, UK Official or NATO Restricted.
+
+      <form class="form" action="/products-component-ammunition-3-answer" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+
+        {{ govukRadios({
+          idPrefix: "security-grading",
+name: "security-grading",
+fieldset: {
+  legend: {
+    isPageHeading: true,
+    classes: "govuk-fieldset__legend--l"
+  }
+},
+
+        items: [
+            {
+              value: "Yes",
+              text: "Yes (includes Unclassified)"
+            },
+                      {
+              value: "No",
+              text: "No"
+          }
+          ]
+        }) }}
+
+        <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+        Help with security gradings
+        </span>
+        </summary>
+        <div class="govuk-details__text">
+        <p>The government classifies information assets to ensure they are appropriately protected.</p>
+
+        <p><a href="https://www.gov.uk/government/publications/government-security-classifications"> Guidance on government security gradings</a></p>
+
+        <p>The grading can sometimes include a prefix and suffix. There are many in use and so it is important that you know the full classification of the product.</p>
+
+        <p>If the product was developed with Ministry of Defense (MOD) funding you will find the grading in the Security Aspects Letter provided by the MOD project team.</p>
+
+        <p>If the product was developed with overseas government support, that government is responsible for providing the grading.</p>
+
+        <p>If the product was developed without UK or overseas government support, you should apply for a private venture grading using <a class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank" href="https://www.spire.trade.gov.uk">SPIRE</a>. The grading will be provided by MOD.</p>
+
+
+        </div>
+        </details>
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

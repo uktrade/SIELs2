@@ -13,38 +13,54 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Give the product a descriptive name</h1>
+      <h1 class="govuk-heading-xl">Firearm category</h1>
 
-      <form class="form" action="/products-firearm-2" method="post">
+      <form class="form" action="/products-component-ammunition-1" method="post">
 
-        {% from "govuk/components/input/macro.njk" import govukInput %}
+        <p>Some firearm categories require a criminal conviction check and a prior import consent document.</p>
 
-        {{ govukInput({
-          label: {
-          classes: "govuk-label--l",
-            isPageHeading: true
+<p>Does the product belong to any of the following categories?</p>
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
+          idPrefix: "type-of-component-ammunitionproduct",
+          name: "type-of-component-ammunitionproduct",
+          fieldset: {
+            legend: {
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
           },
-          hint: {
-   text: "Try to match the name as closely as possible to documentation, such as the technical specification, end user certificate or any firearm certificate."
- },
-          id: "descriptive-name",
-          name: "descriptive-name"
+          items: [
+            {
+              value: "non-automatic-shotgun",
+              text: "Non automatic shotgun"
+            },
+            {
+              value: "non-automatic-rim-fired-rifle",
+              text: "Non automatic rim-fired rifle"
+            },
+            {
+              value: "non-automatic-rim-fired-handgun",
+              text: "Non automatic rim-fired handgun"
+            },
+            {
+              value: "rifle-pre-1938",
+              text: "Rifle made before 1938"
+            },
+            {
+              value: "combination-gun-made-before-1938",
+              text: "Combination gun made before 1938"
+            },
+            {
+      divider: "or"
+    },
+            {
+                value: "none",
+                text: "None of the above"
+              }
+          ]
         }) }}
-
-        {% from "govuk/components/details/macro.njk" import govukDetails %}
-
-        <details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Help with naming your product
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    <p>The product name should be specific enough to help case officers know exactly what the item is.</p>
-    <p>Where appropriate it should include the make, model and type of item. It doesn't need to contain the calibre, serial numbers or part numbers. </p>
-    <p>A descriptive product name will also help you identify and use it in any future applications.</p>
-    </div>
-</details>
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 

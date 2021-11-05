@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/products-ammunition-15">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Will each product have a serial number or other identification marking?</h1>
+
+      <form class="form" action="/products-ammunition-16-1-answer" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {% set noHtml %}
+        {{ govukTextarea({
+          name: "explain-sn",
+          id: "explain-sn",
+          label: {
+            text: "Explain why the product doesn't have serial numbers"
+          }
+        }) }}
+        {% endset -%}
+
+        {% set laterHtml %}
+        <div>
+          <p>You must submit the serial numbers before you can export the products.</p>
+          <p>You can check your application progress, view issued licences and add serial numbers from your dashboard.</p>
+          </div>
+        {% endset -%}
+
+        {{ govukRadios({
+          idPrefix: "sn",
+name: "sn",
+fieldset: {
+  legend: {
+    isPageHeading: true,
+    classes: "govuk-fieldset__legend--l"
+  }
+},
+
+        items: [
+            {
+              value: "Yes-now",
+              text: "Yes, I can add serial numbers now"
+            },
+            {
+              value: "Yes-later",
+              text: "Yes, I can add serial numbers later",
+              conditional: {
+        html: laterHtml
+      }
+            },
+
+            {
+              value: "No",
+              text: "No",
+              conditional: {
+        html: noHtml
+      }
+          }
+          ]
+        }) }}
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

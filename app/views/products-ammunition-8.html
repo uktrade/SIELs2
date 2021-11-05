@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/products-ammunition-7">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Which section of the Firearms Act 1968 is the product covered by?</h1>
+
+      <form class="form" action="/products-ammunition-8-answer" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+{% set dontknowHtml %}
+{{ govukTextarea({
+  id: "dontknow",
+  name: "dontknow",
+  label: {
+    text: "Explain"
+  }
+}) }}
+{% endset -%}
+
+        {{ govukRadios({
+          idPrefix: "section-1-2-or-5",
+name: "section-1-2-or-5",
+fieldset: {
+  legend: {
+    isPageHeading: true,
+    classes: "govuk-fieldset__legend--l"
+  }
+},
+
+        items: [
+            {
+              value: "Section1",
+              text: "Section 1"
+            },
+            {
+              value: "Section2",
+              text: "Section 2"
+          },
+          {
+            value: "Section5",
+            text: "Section 5"
+        },
+        {
+          value: "Not-sure",
+          text: "Don't know",
+          conditional: {
+        html: dontknowHtml
+      }
+      }          ]
+        }) }}
+
+        <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+    More information about the Firearms Act 1968
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p>To read more about Firearms Act 1968 you can visit:</p>
+  <ul>
+  <li><a href="https://www.legislation.gov.uk/ukpga/1968/27/contents">Firearms Act 1968 at Legislation.gov.uk</a></li>
+  <li><a href="https://www.gov.uk/guidance/firearms-licensing-police-guidance">Firearms Licensing at GOV.UK</a></li>
+  <li><a href="https://www.cps.gov.uk/legal-guidance/firearms">Firearms guidance at Crown Prosecution Service</a></li>
+  </ul>
+    </div>
+</details>
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

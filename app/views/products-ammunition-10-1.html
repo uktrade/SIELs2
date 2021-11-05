@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/task-list">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Do you have a document that shows what your product is and what it’s designed to do?</h1>
+
+      <p>For example, a technical specification, datasheet, sales brochure or something else that fully describes the product details.</p>
+
+<p>This is required in order to process the application.</p>
+      <form class="form" action="/products-ammunition-10-1-answer" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+{% set noHtml %}
+{{ govukTextarea({
+  name: "explain-processing",
+  id: "explain-processing",
+  label: {
+    text: "Explain why you are not able to upload a product document. This may delay your application."
+  }
+}) }}
+{% endset -%}
+
+        {{ govukRadios({
+          idPrefix: "tech-spec",
+name: "tech-spec",
+fieldset: {
+  legend: {
+    isPageHeading: true,
+    classes: "govuk-fieldset__legend--l"
+  }
+},
+
+        items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No",
+              conditional: {
+        html: noHtml
+      }
+          }
+          ]
+        }) }}
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

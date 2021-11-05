@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/products-component-ammunition-12-2">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Will the product be incorporated into another item before it is onward exported?</h1>
+
+      <p>For example, will it be integrated into a higher system, platform or software?</p>
+
+      <form class="form" action="/products-component-ammunition-13-1" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {% set yesHtml %}
+        {{ govukTextarea({
+          name: "explain-incorporation",
+          id: "explain-incorporation",
+          label: {
+            text: "Describe what you are incorporating the product into"
+          }
+        }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          idPrefix: "additional-processing",
+name: "additional-processing",
+fieldset: {
+  legend: {
+    isPageHeading: true,
+    classes: "govuk-fieldset__legend--l"
+  }
+},
+
+        items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              conditional: {
+        html: yesHtml
+      }
+            },
+            {
+              value: "No",
+              text: "No"
+          }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

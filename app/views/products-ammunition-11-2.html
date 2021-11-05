@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/products-ammunition-11-1">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">What year was it made?</h1>
+
+      <p>For example, 2007</p>
+
+      <form class="form" action="/products-ammunition-12-1" method="post">
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+  {{ govukInput({
+    label: {
+      text: "Year"
+    },
+    classes: "govuk-input--width-4",
+    id: "made-year",
+    name: "made-year"
+  }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

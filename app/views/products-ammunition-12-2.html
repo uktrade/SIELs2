@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/products-ammunition-12-1">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Will the item be altered or processed before it is exported again?</h1>
+
+      <form class="form" action="/products-ammunition-12-3" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+{% set yesHtml %}
+{{ govukTextarea({
+  name: "explain-processing",
+  id: "explain-processing",
+  label: {
+    text: "Explain how the product will be processed or altered"
+  }
+}) }}
+{% endset -%}
+
+        {{ govukRadios({
+          idPrefix: "additional-processing",
+name: "additional-processing",
+fieldset: {
+  legend: {
+    isPageHeading: true,
+    classes: "govuk-fieldset__legend--l"
+  }
+},
+
+        items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              conditional: {
+        html: yesHtml
+      }
+            },
+            {
+              value: "No",
+              text: "No, it will be onward exported in its original state"
+          }
+          ]
+        }) }}
+
+        <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Help with altered or processed products
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    We need to know if the product will undergo any processing or alteration work, for example being forged, coated or machined.
+  </div>
+</details>
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

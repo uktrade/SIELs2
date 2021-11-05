@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/products-ammunition-13-1">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Deactivation details</h1>
+
+      <form class="form" action="/products-ammunition-15" method="post">
+
+        {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+      {{ govukDateInput({
+        id: "deactivation-date",
+        namePrefix: "deactivation-date",
+        fieldset: {
+          legend: {
+            text: "When was the item deactivated?"
+          }
+        },
+        hint: {
+          text: "For example, 12 11 2007"
+        }
+      }) }}
+
+
+{% set standardsHtml %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+{{ govukTextarea({
+  name: "more-detail",
+  id: "more-detail",
+  label: {
+    text: "Describe who deactivated the product and to what standard it was done"
+  }
+}) }}
+{% endset -%}
+
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        idPrefix: "deactivation-standards",
+        name: "deactivation-standards",
+        fieldset: {
+          legend: {
+            text: "Has the item been deactivated to UK proof house standards?"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes"
+          },
+          {
+            value: "No",
+            text: "No",
+            conditional: {
+        html: standardsHtml
+      }
+          }
+        ]
+      }) }}
+
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

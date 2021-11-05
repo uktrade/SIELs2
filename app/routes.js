@@ -277,10 +277,10 @@ router.post('/end-user-9-answer', function (req, res) {
 })
 
 
-// Run this code when a form is submitted to 'product-firearms-3'
+// Run this code when a form is submitted to 'products-firearm-3'
 router.post('/products-firearm-3-answer', function (req, res) {
 
-  // Make a variable and give it the value from 'product-firearms-3'
+  // Make a variable and give it the value from 'products-firearm-3'
   var securitygrading = req.session.data['security-grading']
 
   // Check whether the variable matches a condition
@@ -296,10 +296,10 @@ router.post('/products-firearm-3-answer', function (req, res) {
 
 
 
-// Run this code when a form is submitted to 'product-firearms-16-1'
+// Run this code when a form is submitted to 'products-firearm-16-1'
 router.post('/products-firearm-16-1-answer', function (req, res) {
 
-  // Make a variable and give it the value from 'product-firearms-16-1'
+  // Make a variable and give it the value from 'products-firearm-16-1'
   var sn = req.session.data['sn']
 
   // Check whether the variable matches a condition
@@ -334,6 +334,653 @@ router.post('/pic-1-answer', function (req, res) {
       res.redirect('/pic-2')
     }
 })
+
+
+// Run this code when a form is submitted to 'products-component-7'
+router.post('/products-component-7-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-component-7'
+  var rfd = req.session.data['registered-fd']
+
+  // Check whether the variable matches a condition
+  if (rfd == "Yes"){
+    // Send user to next page
+    res.redirect('/products-attach-rfd-component')
+  }
+    if (rfd == "No"){
+      // Send user to next page
+      res.redirect('/products-component-8')
+    }
+})
+
+
+
+
+
+
+// Run this code when a form is submitted to 'products-component-8'
+router.post('/products-component-8-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-component-8'
+  var section125 = req.session.data['section-1-2-or-5']
+
+  // Check whether the variable matches a condition
+  if (section125 == "Section1"){
+    // Send user to next page
+    res.redirect('/products-component-9-1')
+  }
+    if (section125 == "Section2"){
+      // Send user to next page
+      res.redirect('/products-component-9-2')
+    }
+      if (section125 == "Section5"){
+        // Send user to next page
+        res.redirect('/products-component-9-5')
+  }
+  if (section125 == "Not-sure"){
+    // Send user to next page
+    res.redirect('/products-component-10-1')
+}
+})
+
+
+// Run this code when a form is submitted to 'products-component-s5'
+router.post('/products-component-s5-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-component-s5'
+  var covereds5 = req.session.data['covered-by-s5']
+
+  // Check whether the variable matches a condition
+  if (covereds5 == "Yes"){
+    // Send user to next page
+    res.redirect('/products-component-9-5')
+  }
+    if (covereds5 == "No"){
+      // Send user to next page
+      res.redirect('/products-component-10-1')
+    }
+    if (covereds5 == "Dont-know"){
+      // Send user to next page
+      res.redirect('/products-component-10-1')
+    }
+})
+
+// Run this code when a form is submitted to 'products-component-10-1'
+router.post('/products-component-10-1-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-component-10-1'
+  var techspec = req.session.data['tech-spec']
+
+  // Check whether the variable matches a condition
+  if (techspec == "Yes"){
+    // Send user to next page
+    res.redirect('/products-component-10-2')
+  }
+    if (techspec == "No"){
+      // Send user to next page
+      res.redirect('/products-component-summary')
+    }
+})
+
+// Run this code when a form is submitted to 'products-component-10-2'
+router.post('/products-component-10-2-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-component-10-2'
+  var techspecrating = req.session.data['tech-spec-rating']
+
+  // Check whether the variable matches a condition
+  if (techspecrating == "No"){
+    // Send user to next page
+    res.redirect('/products-component-10-3')
+  }
+    if (techspecrating == "Yes"){
+      // Send user to next page
+      res.redirect('/products-component-summary')
+    }
+})
+
+
+
+
+
+
+// Run this code when a form is submitted to 'products-component-12-1'
+router.post('/products-component-12-1-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-component-12-1'
+  var exportedagain = req.session.data['exported-again']
+
+  // Check whether the variable matches a condition
+  if (exportedagain == "Yes"){
+    // Send user to next page
+    res.redirect('/products-component-12-2')
+  }
+    if (exportedagain == "No"){
+      // Send user to next page
+      res.redirect('/products-component-13-1')
+    }
+})
+
+
+
+
+// Run this code when a form is submitted to 'products-component-11-1'
+router.post('/products-component-11-1-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-component-11-1'
+  var madebefore1938 = req.session.data['made-before-1938']
+
+  // Check whether the variable matches a condition
+  if (madebefore1938 == "Yes"){
+    // Send user to next page
+    res.redirect('/products-component-11-2')
+  }
+    if (madebefore1938 == "No"){
+      // Send user to next page
+      res.redirect('/products-component-12-1')
+    }
+})
+
+
+
+
+// Run this code when a form is submitted to 'products-component-13-1'
+router.post('/products-component-13-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-component-13-1'
+  var deactivated = req.session.data['deactivated']
+
+  // Check whether the variable matches a condition
+  if (deactivated == "Yes"){
+    // Send user to next page
+    res.redirect('/products-component-13-2')
+  }
+    if (deactivated == "No"){
+      // Send user to next page
+      res.redirect('/products-component-15')
+    }
+})
+
+
+
+
+// Run this code when a form is submitted to 'products-firearm-3'
+router.post('/products-component-3-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-firearm-3'
+  var securitygrading = req.session.data['security-grading']
+
+  // Check whether the variable matches a condition
+  if (securitygrading == "Yes"){
+    // Send user to next page
+    res.redirect('/products-component-4')
+  }
+    if (securitygrading == "No"){
+      // Send user to next page
+      res.redirect('/products-component-5')
+    }
+})
+
+
+
+
+// Run this code when a form is submitted to 'products-firearm-16-1'
+router.post('/products-component-16-1-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-firearm-16-1'
+  var sn = req.session.data['sn']
+
+  // Check whether the variable matches a condition
+  if (sn == "Yes-now"){
+    // Send user to next page
+    res.redirect('/products-component-16-2')
+  }
+  if (sn == "Yes-later"){
+    // Send user to next page
+    res.redirect('/products-component-summary-part-2')
+  }
+    if (sn == "No"){
+      // Send user to next page
+      res.redirect('/products-component-summary-part-2')
+    }
+})
+
+
+
+
+// Run this code when a form is submitted to 'products-ammunition-7'
+router.post('/products-ammunition-7-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-ammunition-7'
+  var rfd = req.session.data['registered-fd']
+
+  // Check whether the variable matches a condition
+  if (rfd == "Yes"){
+    // Send user to next page
+    res.redirect('/products-attach-rfd-ammunition')
+  }
+    if (rfd == "No"){
+      // Send user to next page
+      res.redirect('/products-ammunition-8')
+    }
+})
+
+
+
+
+
+
+// Run this code when a form is submitted to 'products-ammunition-8'
+router.post('/products-ammunition-8-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-ammunition-8'
+  var section125 = req.session.data['section-1-2-or-5']
+
+  // Check whether the variable matches a condition
+  if (section125 == "Section1"){
+    // Send user to next page
+    res.redirect('/products-ammunition-9-1')
+  }
+    if (section125 == "Section2"){
+      // Send user to next page
+      res.redirect('/products-ammunition-9-2')
+    }
+      if (section125 == "Section5"){
+        // Send user to next page
+        res.redirect('/products-ammunition-9-5')
+  }
+  if (section125 == "Not-sure"){
+    // Send user to next page
+    res.redirect('/products-ammunition-10-1')
+}
+})
+
+
+// Run this code when a form is submitted to 'products-ammunition-s5'
+router.post('/products-ammunition-s5-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-ammunition-s5'
+  var covereds5 = req.session.data['covered-by-s5']
+
+  // Check whether the variable matches a condition
+  if (covereds5 == "Yes"){
+    // Send user to next page
+    res.redirect('/products-ammunition-9-5')
+  }
+    if (covereds5 == "No"){
+      // Send user to next page
+      res.redirect('/products-ammunition-10-1')
+    }
+    if (covereds5 == "Dont-know"){
+      // Send user to next page
+      res.redirect('/products-ammunition-10-1')
+    }
+})
+
+// Run this code when a form is submitted to 'products-ammunition-10-1'
+router.post('/products-ammunition-10-1-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-ammunition-10-1'
+  var techspec = req.session.data['tech-spec']
+
+  // Check whether the variable matches a condition
+  if (techspec == "Yes"){
+    // Send user to next page
+    res.redirect('/products-ammunition-10-2')
+  }
+    if (techspec == "No"){
+      // Send user to next page
+      res.redirect('/products-ammunition-summary')
+    }
+})
+
+// Run this code when a form is submitted to 'products-ammunition-10-2'
+router.post('/products-ammunition-10-2-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-ammunition-10-2'
+  var techspecrating = req.session.data['tech-spec-rating']
+
+  // Check whether the variable matches a condition
+  if (techspecrating == "No"){
+    // Send user to next page
+    res.redirect('/products-ammunition-10-3')
+  }
+    if (techspecrating == "Yes"){
+      // Send user to next page
+      res.redirect('/products-ammunition-summary')
+    }
+})
+
+
+
+
+
+
+// Run this code when a form is submitted to 'products-ammunition-12-1'
+router.post('/products-ammunition-12-1-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-ammunition-12-1'
+  var exportedagain = req.session.data['exported-again']
+
+  // Check whether the variable matches a condition
+  if (exportedagain == "Yes"){
+    // Send user to next page
+    res.redirect('/products-ammunition-12-2')
+  }
+    if (exportedagain == "No"){
+      // Send user to next page
+      res.redirect('/products-ammunition-13-1')
+    }
+})
+
+
+
+
+// Run this code when a form is submitted to 'products-ammunition-11-1'
+router.post('/products-ammunition-11-1-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-ammunition-11-1'
+  var madebefore1938 = req.session.data['made-before-1938']
+
+  // Check whether the variable matches a condition
+  if (madebefore1938 == "Yes"){
+    // Send user to next page
+    res.redirect('/products-ammunition-11-2')
+  }
+    if (madebefore1938 == "No"){
+      // Send user to next page
+      res.redirect('/products-ammunition-12-1')
+    }
+})
+
+
+
+
+// Run this code when a form is submitted to 'products-ammunition-13-1'
+router.post('/products-ammunition-13-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-ammunition-13-1'
+  var deactivated = req.session.data['deactivated']
+
+  // Check whether the variable matches a condition
+  if (deactivated == "Yes"){
+    // Send user to next page
+    res.redirect('/products-ammunition-13-2')
+  }
+    if (deactivated == "No"){
+      // Send user to next page
+      res.redirect('/products-ammunition-15')
+    }
+})
+
+
+
+
+// Run this code when a form is submitted to 'products-firearm-3'
+router.post('/products-ammunition-3-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-firearm-3'
+  var securitygrading = req.session.data['security-grading']
+
+  // Check whether the variable matches a condition
+  if (securitygrading == "Yes"){
+    // Send user to next page
+    res.redirect('/products-ammunition-4')
+  }
+    if (securitygrading == "No"){
+      // Send user to next page
+      res.redirect('/products-ammunition-5')
+    }
+})
+
+
+
+
+// Run this code when a form is submitted to 'products-firearm-16-1'
+router.post('/products-ammunition-16-1-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-firearm-16-1'
+  var sn = req.session.data['sn']
+
+  // Check whether the variable matches a condition
+  if (sn == "Yes-now"){
+    // Send user to next page
+    res.redirect('/products-ammunition-16-2')
+  }
+  if (sn == "Yes-later"){
+    // Send user to next page
+    res.redirect('/products-ammunition-summary-part-2')
+  }
+    if (sn == "No"){
+      // Send user to next page
+      res.redirect('/products-ammunition-summary-part-2')
+    }
+})
+
+
+
+
+
+// Run this code when a form is submitted to 'products-component-ammunition-7'
+router.post('/products-component-ammunition-7-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-component-ammunition-7'
+  var rfd = req.session.data['registered-fd']
+
+  // Check whether the variable matches a condition
+  if (rfd == "Yes"){
+    // Send user to next page
+    res.redirect('/products-attach-rfd-component-ammunition')
+  }
+    if (rfd == "No"){
+      // Send user to next page
+      res.redirect('/products-component-ammunition-8')
+    }
+})
+
+
+
+
+
+
+// Run this code when a form is submitted to 'products-component-ammunition-8'
+router.post('/products-component-ammunition-8-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-component-ammunition-8'
+  var section125 = req.session.data['section-1-2-or-5']
+
+  // Check whether the variable matches a condition
+  if (section125 == "Section1"){
+    // Send user to next page
+    res.redirect('/products-component-ammunition-9-1')
+  }
+    if (section125 == "Section2"){
+      // Send user to next page
+      res.redirect('/products-component-ammunition-9-2')
+    }
+      if (section125 == "Section5"){
+        // Send user to next page
+        res.redirect('/products-component-ammunition-9-5')
+  }
+  if (section125 == "Not-sure"){
+    // Send user to next page
+    res.redirect('/products-component-ammunition-10-1')
+}
+})
+
+
+// Run this code when a form is submitted to 'products-component-ammunition-s5'
+router.post('/products-component-ammunition-s5-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-component-ammunition-s5'
+  var covereds5 = req.session.data['covered-by-s5']
+
+  // Check whether the variable matches a condition
+  if (covereds5 == "Yes"){
+    // Send user to next page
+    res.redirect('/products-component-ammunition-9-5')
+  }
+    if (covereds5 == "No"){
+      // Send user to next page
+      res.redirect('/products-component-ammunition-10-1')
+    }
+    if (covereds5 == "Dont-know"){
+      // Send user to next page
+      res.redirect('/products-component-ammunition-10-1')
+    }
+})
+
+// Run this code when a form is submitted to 'products-component-ammunition-10-1'
+router.post('/products-component-ammunition-10-1-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-component-ammunition-10-1'
+  var techspec = req.session.data['tech-spec']
+
+  // Check whether the variable matches a condition
+  if (techspec == "Yes"){
+    // Send user to next page
+    res.redirect('/products-component-ammunition-10-2')
+  }
+    if (techspec == "No"){
+      // Send user to next page
+      res.redirect('/products-component-ammunition-summary')
+    }
+})
+
+// Run this code when a form is submitted to 'products-component-ammunition-10-2'
+router.post('/products-component-ammunition-10-2-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-component-ammunition-10-2'
+  var techspecrating = req.session.data['tech-spec-rating']
+
+  // Check whether the variable matches a condition
+  if (techspecrating == "No"){
+    // Send user to next page
+    res.redirect('/products-component-ammunition-10-3')
+  }
+    if (techspecrating == "Yes"){
+      // Send user to next page
+      res.redirect('/products-component-ammunition-summary')
+    }
+})
+
+
+
+
+
+
+// Run this code when a form is submitted to 'products-component-ammunition-12-1'
+router.post('/products-component-ammunition-12-1-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-component-ammunition-12-1'
+  var exportedagain = req.session.data['exported-again']
+
+  // Check whether the variable matches a condition
+  if (exportedagain == "Yes"){
+    // Send user to next page
+    res.redirect('/products-component-ammunition-12-2')
+  }
+    if (exportedagain == "No"){
+      // Send user to next page
+      res.redirect('/products-component-ammunition-13-1')
+    }
+})
+
+
+
+
+// Run this code when a form is submitted to 'products-component-ammunition-11-1'
+router.post('/products-component-ammunition-11-1-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-component-ammunition-11-1'
+  var madebefore1938 = req.session.data['made-before-1938']
+
+  // Check whether the variable matches a condition
+  if (madebefore1938 == "Yes"){
+    // Send user to next page
+    res.redirect('/products-component-ammunition-11-2')
+  }
+    if (madebefore1938 == "No"){
+      // Send user to next page
+      res.redirect('/products-component-ammunition-12-1')
+    }
+})
+
+
+
+
+// Run this code when a form is submitted to 'products-component-ammunition-13-1'
+router.post('/products-component-ammunition-13-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-component-ammunition-13-1'
+  var deactivated = req.session.data['deactivated']
+
+  // Check whether the variable matches a condition
+  if (deactivated == "Yes"){
+    // Send user to next page
+    res.redirect('/products-component-ammunition-13-2')
+  }
+    if (deactivated == "No"){
+      // Send user to next page
+      res.redirect('/products-component-ammunition-15')
+    }
+})
+
+
+
+
+// Run this code when a form is submitted to 'products-firearm-3'
+router.post('/products-component-ammunition-3-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'product-firearms-3'
+  var securitygrading = req.session.data['security-grading']
+
+  // Check whether the variable matches a condition
+  if (securitygrading == "Yes"){
+    // Send user to next page
+    res.redirect('/products-component-ammunition-4')
+  }
+    if (securitygrading == "No"){
+      // Send user to next page
+      res.redirect('/products-component-ammunition-5')
+    }
+})
+
+
+
+
+// Run this code when a form is submitted to 'products-firearm-16-1'
+router.post('/products-component-ammunition-16-1-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-firearm-16-1'
+  var sn = req.session.data['sn']
+
+  // Check whether the variable matches a condition
+  if (sn == "Yes-now"){
+    // Send user to next page
+    res.redirect('/products-component-ammunition-16-2')
+  }
+  if (sn == "Yes-later"){
+    // Send user to next page
+    res.redirect('/products-component-ammunition-summary-part-2')
+  }
+    if (sn == "No"){
+      // Send user to next page
+      res.redirect('/products-component-ammunition-summary-part-2')
+    }
+})
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/products-ammunition-8">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Upload your shotgun certificate</h1>
+
+      <form class="form" action="/products-ammunition-10-1" method="post">
+
+        {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+  {{ govukFileUpload({
+    id: "file-upload-2",
+    name: "file-upload-2"
+  }) }}
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+          label: {
+            text: "Certificate number"
+},
+  classes: "govuk-input--width-20",
+name: "certificate-number-section-1",
+id: "certificate-number-section-"
+        }) }}
+
+        {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+{{ govukDateInput({
+  id: "expiry-date",
+  namePrefix: "expiry-date",
+  fieldset: {
+    legend: {
+      text: "Expiry date"
+    }
+  },
+  hint: {
+    text: "For example, 30 9 2024"
+  }
+}) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

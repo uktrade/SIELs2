@@ -13,13 +13,16 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Does the product belong to any of the following categories?</h1>
+      <h1 class="govuk-heading-xl">Firearm category</h1>
 
       <form class="form" action="/products-firearm-1" method="post">
 
-        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        <p>Some firearm categories require a criminal conviction check and a prior import consent document.</p>
 
-        {{ govukRadios({
+<p>Does the product belong to any of the following categories?</p>
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
           idPrefix: "type-of-firearm-product",
           name: "type-of-firearm-product",
           fieldset: {
