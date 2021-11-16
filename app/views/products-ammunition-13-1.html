@@ -13,11 +13,23 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Has the product been deactivated?</h1>
+      <h1 class="govuk-heading-xl">Does it have valid UK proof marks?</h1>
 
       <form class="form" action="/products-ammunition-13-answer" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+      {% set noHtml %}
+      {{ govukTextarea({
+      name: "explain-no-proof-marks",
+      id: "explain-no-proof-marks",
+      label: {
+      text: "Explain why your product doesn't have valid UK proof marks."
+      }
+      }) }}
+      {% endset -%}
+
 
         {{ govukRadios({
           idPrefix: "deactivated",
@@ -36,8 +48,11 @@ fieldset: {
             },
             {
               value: "No",
-              text: "No"
+              text: "No",
+              conditional: {
+        html: noHtml
           }
+        }
           ]
         }) }}
 
