@@ -457,7 +457,7 @@ router.post('/products-component-12-1-answer', function (req, res) {
   }
     if (exportedagain == "No"){
       // Send user to next page
-      res.redirect('/products-component-13-1')
+      res.redirect('/products-component-14')
     }
 })
 
@@ -481,25 +481,6 @@ router.post('/products-component-11-1-answer', function (req, res) {
     }
 })
 
-
-
-
-// Run this code when a form is submitted to 'products-component-13-1'
-router.post('/products-component-13-answer', function (req, res) {
-
-  // Make a variable and give it the value from 'products-component-13-1'
-  var deactivated = req.session.data['deactivated']
-
-  // Check whether the variable matches a condition
-  if (deactivated == "Yes"){
-    // Send user to next page
-    res.redirect('/products-component-13-2')
-  }
-    if (deactivated == "No"){
-      // Send user to next page
-      res.redirect('/products-component-15')
-    }
-})
 
 
 
@@ -696,25 +677,6 @@ router.post('/products-ammunition-11-1-answer', function (req, res) {
 
 
 
-// Run this code when a form is submitted to 'products-ammunition-13-1'
-router.post('/products-ammunition-13-answer', function (req, res) {
-
-  // Make a variable and give it the value from 'products-ammunition-13-1'
-  var deactivated = req.session.data['deactivated']
-
-  // Check whether the variable matches a condition
-  if (deactivated == "Yes"){
-    // Send user to next page
-    res.redirect('/products-ammunition-13-2')
-  }
-    if (deactivated == "No"){
-      // Send user to next page
-      res.redirect('/products-ammunition-15')
-    }
-})
-
-
-
 
 // Run this code when a form is submitted to 'products-firearm-3'
 router.post('/products-ammunition-3-answer', function (req, res) {
@@ -882,7 +844,7 @@ router.post('/products-component-ammunition-12-1-answer', function (req, res) {
   }
     if (exportedagain == "No"){
       // Send user to next page
-      res.redirect('/products-component-ammunition-13-1')
+      res.redirect('/products-component-ammunition-15')
     }
 })
 

@@ -13,17 +13,19 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">What is the calibre of the product?</h1>
+      <h1 class="govuk-heading-xl">What weapon will this component be used with?</h1>
 
-      <form class="form" action="/products-component-6" method="post">
+<p>Include the calibre of the weapon and a descriptive name.</p>
 
-        {% from "govuk/components/input/macro.njk" import govukInput %}
+      <form class="form" action="/products-component-7" method="post">
 
-  {{ govukInput({
-      classes: "govuk-input--width-20",
-    id: "calibre",
-    name: "calibre"
-  }) }}
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+        {{ govukTextarea({
+          name: "calibre-detail",
+          id: "calibre-detail",
+          rows:"2"
+        }) }}
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
