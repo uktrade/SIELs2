@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/products-accessory-12-1">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Quantity and value</h1>
+
+      <form class="form" action="/products-accessory-summary-part-2" method="post">
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+    text: "Number of items"
+  },
+  classes: "govuk-input--width-10",
+  id: "quantity",
+  name: "quantity"
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Total value"
+  },
+    id: "value",
+    name: "value",
+    prefix: {
+      text: "£"
+    },
+    classes: "govuk-input--width-10",
+    spellcheck: false
+  }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
