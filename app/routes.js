@@ -709,7 +709,7 @@ router.post('/products-accessory-3-answer', function (req, res) {
   }
     if (securitygrading == "No"){
       // Send user to next page
-      res.redirect('/products-accessory-5')
+      res.redirect('/products-accessory-military-use')
     }
 })
 

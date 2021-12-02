@@ -23,10 +23,7 @@
 
     {{ govukFileUpload({
       id: "file-upload-pcf",
-      name: "file-upload-pcf",
-      label: {
-        text: "Upload a file"
-      }
+      name: "file-upload-pcf"
     }) }}
 
     {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
@@ -89,8 +86,8 @@ text: "For example, 30 9 2024"
     </span>
   </summary>
         <div class="govuk-details__text">
-        <p>You must have PIC before submitting a firearms export licence application.</p>
-        <p>Many countries do not class some weapons to be firearms so a PIC form is not issued. In this instance, an end-user undertaking form (EUU) is sufficient. It must be submitted together with a letter or email from the relevant importing countries licensing authorities stating that a PIC or equivalent cannot be issued.</p>
+        <p>You must have a PIC form before submitting a firearms export licence application.</p>
+        <p>If a country does not class a certain weapon as a firearm, a PIC form may not be issued, and therefore an end-user undertaking form (EUU) would be sufficient. It must be submitted together with a letter or email from the relevant importing countries licensing authorities stating that a PIC form or equivalent cannot be issued. You use the 'Additional information' section to upload any supporting documents. </p>
       </div>
     </details>
 
