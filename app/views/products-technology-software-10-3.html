@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/products-technology-software-10-2">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Upload a document that shows what your product is designed to do</h1>
+
+      <form class="form" action="/products-technology-software-summary" method="post">
+
+        {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+        {{ govukFileUpload({
+          id: "file-upload-tech-spec",
+          name: "file-upload-tech-spec",
+          label: {
+            text: "Upload a file"
+          }
+        }) }}
+
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+        {{ govukTextarea({
+          name: "tech-spec-description",
+          id: "tech-spec-description",
+          autocomplete: "tech-spec-description",
+          label: {
+        classes: "govuk-label--l"
+  },
+  hint: {
+    text: "Description (optional)"
+  }
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

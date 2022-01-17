@@ -714,6 +714,24 @@ router.post('/products-accessory-3-answer', function (req, res) {
 })
 
 
+// Run this code when a form is submitted to 'products-technology-software-3'
+router.post('/products-technology-software-3-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-technology-software-3'
+  var securitygrading = req.session.data['security-grading']
+
+  // Check whether the variable matches a condition
+  if (securitygrading == "Yes"){
+    // Send user to next page
+    res.redirect('/products-technology-software-4')
+  }
+    if (securitygrading == "No"){
+      // Send user to next page
+      res.redirect('/products-technology-software-military-use')
+    }
+})
+
+
 
 
 // Run this code when a form is submitted to 'products-firearm-16-1'
@@ -846,6 +864,44 @@ router.post('/products-accessory-10-1-answer', function (req, res) {
 })
 
 
+// Run this code when a form is submitted to 'products-technology-software-10-1'
+router.post('/products-technology-software-10-1-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-accessory-10-1'
+  var techspec = req.session.data['tech-spec']
+
+  // Check whether the variable matches a condition
+  if (techspec == "Yes"){
+    // Send user to next page
+    res.redirect('/products-technology-software-10-2')
+  }
+    if (techspec == "No"){
+      // Send user to next page
+      res.redirect('/products-technology-software-summary')
+    }
+})
+
+
+
+// Run this code when a form is submitted to 'products--technology-software-10-1'
+router.post('/products--technology-software-10-1-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-accessory-10-1'
+  var techspec = req.session.data['tech-spec']
+
+  // Check whether the variable matches a condition
+  if (techspec == "Yes"){
+    // Send user to next page
+    res.redirect('/products--technology-software-10-2')
+  }
+    if (techspec == "No"){
+      // Send user to next page
+      res.redirect('/products--technology-software-summary')
+    }
+})
+
+
+
 
 // Run this code when a form is submitted to 'products-component-ammunition-10-2'
 router.post('/products-component-ammunition-10-2-answer', function (req, res) {
@@ -879,6 +935,24 @@ router.post('/products-accessory-10-2-answer', function (req, res) {
     if (techspecrating == "Yes"){
       // Send user to next page
       res.redirect('/products-accessory-summary')
+    }
+})
+
+
+// Run this code when a form is submitted to 'products-technology-software-10-2'
+router.post('/products-technology-software-10-2-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-accessory-10-2'
+  var techspecrating = req.session.data['tech-spec-rating']
+
+  // Check whether the variable matches a condition
+  if (techspecrating == "No"){
+    // Send user to next page
+    res.redirect('/products-technology-software-10-3')
+  }
+    if (techspecrating == "Yes"){
+      // Send user to next page
+      res.redirect('/products-technology-software-summary')
     }
 })
 
@@ -921,6 +995,24 @@ router.post('/products-accessory-12-1-answer', function (req, res) {
     }
 })
 
+
+
+// Run this code when a form is submitted to 'products-technology-software-12-1'
+router.post('/products-technology-software-12-1-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-technology-software-12-1'
+  var exportedagain = req.session.data['exported-again']
+
+  // Check whether the variable matches a condition
+  if (exportedagain == "Yes"){
+    // Send user to next page
+    res.redirect('/products-technology-software-12-2')
+  }
+    if (exportedagain == "No"){
+      // Send user to next page
+      res.redirect('/products-technology-software-15')
+    }
+})
 
 
 

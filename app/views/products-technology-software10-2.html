@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="/products-ammunition-12-2">Back</a>
+  <a class="govuk-back-link" href="/products-technology-software-10-1">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -13,27 +13,22 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Will the product be incorporated into another item before it is onward exported?</h1>
+      <h1 class="govuk-heading-xl">Is the document rated above Official-sensitive?</h1>
 
-      <p>For example, will it be integrated into a higher system, platform or software?</p>
-
-      <form class="form" action="/products-ammunition-14" method="post">
+      <form class="form" action="/products-technology-software-10-2-answer" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {% set yesHtml %}
-        {{ govukTextarea({
-          name: "explain-incorporation",
-          id: "explain-incorporation",
-          label: {
-            text: "Describe what you are incorporating the product into"
-          }
-        }) }}
+        <div>
+        <p>Contact Export Control Joint Unit on 020 7215 4594 to arrange a secure way to send this document. You can continue with this application without attaching a document.</p>
+<p><a class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank" href="https://www.gov.uk/call-charges">Find out about call charges (opens in new tab)</a></p>
+        </div>
         {% endset -%}
 
         {{ govukRadios({
-          idPrefix: "additional-processing",
-name: "additional-processing",
+          idPrefix: "tech-spec-rating",
+name: "tech-spec-rating",
 fieldset: {
   legend: {
     isPageHeading: true,
@@ -55,6 +50,7 @@ fieldset: {
           }
           ]
         }) }}
+
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
