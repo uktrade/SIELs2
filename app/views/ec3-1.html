@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/pic-1">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Upload an EC3 form</h1>
+
+      <p class="govuk-body">An EC3 form is required if you are exporting firearms from Northern Ireland.
+
+      <form class="form" action="/end-user-summary" method="post">
+
+        {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+    {{ govukFileUpload({
+      id: "file-upload-pcf",
+      name: "file-upload-pcf"
+    }) }}
+
+          {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+        {{ govukTextarea({
+          name: "ec3 description",
+          id: "ec3 description",
+          autocomplete: "ec3 description",
+          label: {
+        classes: "govuk-label--l"
+  },
+  hint: {
+    text: "If you do not have an EC3 form, explain why."
+  }
+        }) }}
+
+
+
+
+
+        <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Help with the EC3 form and exemptions
+    </span>
+  </summary>
+        <div class="govuk-details__text">
+        <p>You do not require an EC3 form to export weapons sights, sound suppressors or silencers, magazines, antique firearms manufactured before 1890 (including parts and components for those firearms) and items which will be used by police, armed forces or public authorities.</p>
+        <p><a href="https://www.gov.uk/government/publications/end-user-undertaking-euu-form">Guidance on the EC3 form</a></p>
+      </div>
+    </details>
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
