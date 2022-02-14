@@ -650,7 +650,7 @@ router.post('/products-ammunition-12-1-answer', function (req, res) {
   }
     if (exportedagain == "No"){
       // Send user to next page
-      res.redirect('/products-ammunition-13-1')
+      res.redirect('/products-ammunition-14')
     }
 })
 
@@ -1098,6 +1098,9 @@ router.post('/products-component-ammunition-16-1-answer', function (req, res) {
       res.redirect('/products-component-ammunition-summary-part-2')
     }
 })
+
+
+
 
 
 

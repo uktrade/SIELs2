@@ -21,9 +21,9 @@
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-        {{ govukRadios({
-          idPrefix: "type-of-firearm-product",
-          name: "type-of-firearm-product",
+        {{ govukCheckboxes({
+          idPrefix: "type-of-accessory-product",
+          name: "type-of-accessory-product",
           fieldset: {
             legend: {
               isPageHeading: true,

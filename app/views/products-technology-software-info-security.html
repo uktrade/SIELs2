@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="/products-technology-software-purpose">Back</a>
+  <a class="govuk-back-link" href="/products-technology-software-military-use">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -13,26 +13,26 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-            <h1 class="govuk-heading-xl">Is the product for military use?</h1>
+            <h1 class="govuk-heading-xl">Is the product designed to employ 'information security' features?</h1>
 
-            <form class="form" action="/products-technology-software-info-security" method="post">
+            <form class="form" action="/products-technology-software-10-1" method="post">
 
               {% from "govuk/components/radios/macro.njk" import govukRadios %}
               {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
               {% set noHtml %}
               {{ govukTextarea({
-                name: "explain-sn",
-                id: "explain-sn",
+                name: "explain-info-sec",
+                id: "explain-info-sec",
                 label: {
-                  text: "Provide details of the modifications"
+                  text: "Provide details of the information security features"
                 }
               }) }}
               {% endset -%}
 
                           {{ govukRadios({
-                idPrefix: "sn",
-      name: "sn",
+                idPrefix: "info-sec",
+      name: "info-sec",
       fieldset: {
         legend: {
           isPageHeading: true,
@@ -41,14 +41,9 @@
       },
 
               items: [
-                  {
-                    value: "Yes-specially",
-                    text: "Yes, it is specially designed for military use"
-                  },
-
-                  {
-                    value: "Yes-later",
-                    text: "Yes, modified for military use",
+                                    {
+                    value: "Yes",
+                    text: "Yes",
                     conditional: {
               html: noHtml
             }
