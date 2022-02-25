@@ -19,6 +19,34 @@
       <p>You must include at least one page on company letterhead. This can either be within the end-user document or on a separate document.</p>
       <p> Products listed in the document should match as closely as possible to the products listed in the application.</p>
       <p> All products on the application must appear in the document.</p>
+      <br>
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+      {% set noeuuHtml %}
+{{ govukTextarea({
+    name: "no-euu",
+    id: "no-euu",
+    hint: {
+      text: "Explain why you do not have an end-user undertaking or stockist undertaking."
+    }
+  }) }}
+{% endset -%}
+
+{{ govukCheckboxes({
+  idPrefix: "euu",
+  name: "euu",
+  items: [
+      {
+      value: "euu-no",
+      text: "I do not have an end-user undertaking or stockist undertaking",
+      conditional: {
+        html: noeuuHtml
+      }
+    }
+  ]
+}) }}
 
       <form class="form" action="/end-user-7" method="post">
 

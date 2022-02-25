@@ -727,7 +727,7 @@ router.post('/products-technology-software-3-answer', function (req, res) {
   }
     if (securitygrading == "No"){
       // Send user to next page
-      res.redirect('/products-technology-software-military-use')
+      res.redirect('/products-technology-software-purpose')
     }
 })
 
