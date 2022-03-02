@@ -322,16 +322,16 @@ router.post('/products-firearm-16-1-answer', function (req, res) {
 router.post('/pic-1-answer', function (req, res) {
 
   // Make a variable and give it the value from 'pic-1'
-  var inenglish = req.session.data['in-english']
+  var pic = req.session.data['pic']
 
   // Check whether the variable matches a condition
-  if (inenglish == "Yes"){
+  if (pic == "Yes"){
     // Send user to next page
-    res.redirect('/end-user-summary')
+    res.redirect('/pic-2')
   }
-    if (inenglish == "No"){
+    if (pic == "No"){
       // Send user to next page
-      res.redirect('/pic-2')
+      res.redirect('/end-user-summary')
     }
 })
 
@@ -1102,6 +1102,22 @@ router.post('/products-component-ammunition-16-1-answer', function (req, res) {
 
 
 
+// Run this code when a form is submitted to 'pic-2'
+router.post('/pic-2-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'pic-2'
+  var inenglish = req.session.data['in-english']
+
+  // Check whether the variable matches a condition
+  if (inenglish == "Yes"){
+    // Send user to next page
+    res.redirect('/end-user-summary')
+  }
+    if (inenglish == "No"){
+      // Send user to next page
+      res.redirect('/pic-3')
+    }
+})
 
 
 

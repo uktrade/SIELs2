@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="/end-user-10">Back</a>
+  <a class="govuk-back-link" href="/end-user-9">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -13,81 +13,66 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Upload a prior import consent (PIC) form</h1>
-
-      <p class="govuk-body">The PIC form tells us that the destination country is content to import the firearms.
+      <h1 class="govuk-heading-xl">Do you have a prior import consent document?</h1>
 
       <form class="form" action="/pic-1-answer" method="post">
 
-        {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
-
-    {{ govukFileUpload({
-      id: "file-upload-pcf",
-      name: "file-upload-pcf"
-    }) }}
-
-    {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
-
-{{ govukDateInput({
-id: "expiry-date",
-namePrefix: "expiry-date",
-fieldset: {
-legend: {
-  text: "Expiry date"
-}
-},
-hint: {
-text: "For example, 30 9 2024"
-}
-}) }}
-
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
+        {% set noHtml %}
         {{ govukTextarea({
-          name: "pic description",
-          id: "pic description",
-          autocomplete: "pic description",
-          label: {
-        classes: "govuk-label--l"
-  },
-  hint: {
-    text: "If you do not have a PIC form, explain why."
-  }
+                name: "pic description",
+                id: "pic description",
+                autocomplete: "pic description",
+                label: {
+              classes: "govuk-label--l"
+        },
+        hint: {
+          text: "Explain why you do not have a prior import consent document (optional)"
+        }
+              }) }}
+        {% endset -%}
+
+
+
+
+        {{ govukRadios({
+          idPrefix: "pic",
+      name: "pic",
+      fieldset: {
+      legend: {
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+      }
+      },
+        items: [
+            {
+              value: "Yes",
+              text: "Yes"
+                        },
+            {
+              value: "No",
+              text: "No",
+              conditional: {
+        html: noHtml
+      }
+          }
+          ]
         }) }}
 
 
-          {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-          {{ govukRadios({
-            idPrefix: "in-english",
-            name: "in-english",
-            fieldset: {
-              legend: {
-                text: "Is the end-user document in English?"
-              }
-            },
-            items: [
-              {
-                value: "Yes",
-                text: "Yes"
-              },
-              {
-                value: "No",
-                text: "No"
-              }
-            ]
-          }) }}
 
 
         <details class="govuk-details" data-module="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      Help with the prior import consent form
-    </span>
+      Help with prior import consent
+        </span>
   </summary>
         <div class="govuk-details__text">
-        <p>You must have a PIC form before submitting a firearms export licence application.</p>
-        <p>If a country does not class a certain weapon as a firearm, a PIC form may not be issued, and therefore an end-user undertaking form (EUU) would be sufficient. It must be submitted together with a letter or email from the relevant importing countries licensing authorities stating that a PIC form or equivalent cannot be issued. You use the 'Additional information' section to upload any supporting documents. </p>
+        <p>Your application may require a <a href="https://www.gov.uk/guidance/firearms-and-export-control-forms">prior import consent (PIC)</a> document to show that the destination country is content to import the firearms.
+        <p>However, if a country does not class a certain product as a firearm, a PIC document may not be issued, and an end-user undertaking would be sufficient instead. It must be submitted together with a letter or email from the relevant importing country's licensing authority stating that a PIC document or equivalent cannot be issued. You can use the 'Additional information' section to upload any supporting documents.</p>
       </div>
     </details>
 
