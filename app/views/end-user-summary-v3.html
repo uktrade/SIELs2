@@ -1,0 +1,123 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/end-user-7">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+      <h1 class="govuk-heading-xl">End-user summary</h1>
+
+      <form class="form" action="/task-list" method="post">
+
+
+
+        <dl class="govuk-summary-list">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key ">
+              Select the type of end-user
+            </dt>
+            <dd id="type" class="govuk-summary-list__value">
+              Your answer here
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link govuk-link--no-visited-state" href="/none">Change</a>
+    </dd>
+          </div>
+
+  			<div class="govuk-summary-list__row">
+  				<dt class="govuk-summary-list__key ">
+  					End-user name
+  				</dt>
+  				<dd id="name" class="govuk-summary-list__value">
+  					Your answer here
+  				</dd>
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link govuk-link--no-visited-state" href="/none">Change</a>
+  </dd>
+  			</div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key ">
+            End-user website (optional)
+          </dt>
+          <dd id="website" class="govuk-summary-list__value">
+            <a class="govuk-link govuk-link--no-visited-state" href="/none">www.youranswerhere.co.uk</a>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link govuk-link--no-visited-state" href="/none">Change</a>
+      </dd>
+        </div>
+
+  			<div class="govuk-summary-list__row">
+  				<dt class="govuk-summary-list__key ">
+  					End-user address
+  				</dt>
+  				<dd id="address" class="govuk-summary-list__value">
+  					Your answer here
+  				</dd>
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link govuk-link--no-visited-state" href="/none">Change</a>
+  </dd>
+  			</div>
+
+
+
+  			<div class="govuk-summary-list__row">
+  				<dt class="govuk-summary-list__key ">
+  					Signatory name
+  				</dt>
+  				<dd id="signatory_name" class="govuk-summary-list__value">
+  					Your answer here
+  				</dd>
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link govuk-link--no-visited-state" href="/none">Change</a>
+  </dd>
+  			</div>
+
+  			<div class="govuk-summary-list__row">
+  				<dt class="govuk-summary-list__key ">
+  					Do you have an end-user document?
+  				</dt>
+          <dd id="signatory_name" class="govuk-summary-list__value">
+  				No, I do not have an end-user undertaking or stockist undertaking
+  				</dd>
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link govuk-link--no-visited-state" href="/none">Change</a>
+  </dd>
+  			</div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key ">
+            Explain why you do not have an end-user undertaking or stockist undertaking
+          </dt>
+          <dd id="signatory_name" class="govuk-summary-list__value">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempus tellus vitae tortor maximus blandit. Sed tellus neque, dictum vitae enim ut, facilisis iaculis ex
+          </dd>
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link govuk-link--no-visited-state" href="/none">Change</a>
+  </dd>
+        </div>
+
+        	</dl>
+
+
+        <button class="govuk-button" data-module="govuk-button">Submit</button>
+
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+   Remove end-user
+ </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
