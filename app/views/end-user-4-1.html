@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/end-user-3">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Tax identification number (optional)</h1>
+
+      <form class="form" action="/end-user-5" method="post">
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+      isPageHeading: true
+  },
+    classes: "govuk-input--width-20",
+  id: "tin",
+  name: "tin"
+}) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
