@@ -13,30 +13,28 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Upload a document</h1>
-
-<p>The file must be smaller than 50MB.</p>
+      <h1 class="govuk-heading-xl">Add any supporting information about the third party (optional)</h1>
 
       <form class="form" action="/third-party-summary" method="post">
 
         {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
 
 {{ govukFileUpload({
-  id: "file-upload-third party",
-  name: "file-upload-third party"
+  id: "file-upload-3party",
+  name: "file-upload-3party"
 }) }}
 
         {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
         {{ govukTextarea({
-          name: "euu description",
-          id: "euu description",
-          autocomplete: "euu description",
+          name: "3party-notes",
+          id: "3party-notes",
+          autocomplete: "3party-notes",
           label: {
         classes: "govuk-label--l"
   },
   hint: {
-    text: "Description"
+    text: "Notes"
   }
         }) }}
 
