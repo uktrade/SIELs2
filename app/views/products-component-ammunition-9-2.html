@@ -50,6 +50,46 @@ id: "certificate-number-section-"
   }
 }) }}
 
+
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+
+
+{% set nodochtml %}
+{{ govukTextarea({
+  name: "no-doc-reason",
+  id: "no-doc-reason",
+  label: {
+    text: "Explain why you do not have a shotgun certificate"
+  }
+}) }}
+{% endset -%}
+
+<p>Or</p>
+
+{{ govukCheckboxes({
+  idPrefix: "contact",
+  name: "contact",
+  fieldset: {
+    legend: {
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+
+  items: [
+    {
+      value: "i-have-no-doc",
+      text: "I do not have a shotgun certificate",
+      conditional: {
+        html: nodochtml
+      }
+    }
+  ]
+}) }}
+
+
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
