@@ -1,19 +1,34 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Check your answers
+  Product list
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="/task-list">Back</a>
+  <div class="govuk-breadcrumbs">
+  		<ol class="govuk-breadcrumbs__list">
+  			<li class="govuk-breadcrumbs__list-item">
+  				<a class="govuk-breadcrumbs__link" href="/">
+  					Account home
+  				</a>
+  			</li>
+  			<li class="govuk-breadcrumbs__list-item">
+  				<a class="govuk-breadcrumbs__link" href="/goods/">
+  					Product list
+  				</a>
+  			</li>
+  			<li class="govuk-breadcrumbs__list-item">
+  				Product
+  			</li>
+  		</ol>
+  	</div>
+
 {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
 
-    <h1 class="govuk-heading-xl">'Blaser R8 professional bolt action rifle' has been saved</h1>
-
-    <p>This item has been saved to your product list so that you can reuse it for future applications.</p>
+    <h1 class="govuk-heading-xl">Product</h1>
 
   <dl class="govuk-summary-list govuk-!-margin-bottom-9" id="good-detail-summary">
     <div class="govuk-summary-list__row">
@@ -24,9 +39,7 @@
         Firearm
       </dd>
       <dd class="govuk-summary-list__actions">
-        <a id="change-is-sporting-shotgun" class="govuk-link govuk-link--no-visited-state" href="/applications/45cf442d-550e-4ee7-91ac-2359cf97549d/goods/f727aaaf-0ea6-488f-b61c-1cdaf171ecad/edit-firearm-details/sporting-shotgun/">Change <span class="govuk-visually-hidden">Sporting shotgun</span></a>
-
-      </dd>
+            </dd>
     </div>
 
 
@@ -142,22 +155,6 @@
       </dd>
     </div>
 
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Are you a registered firearms dealer?
-      </dt>
-
-        <dd class="govuk-summary-list__value">
-        No
-        </dd>
-
-      <dd class="govuk-summary-list__actions">
-
-          <a id="change-good-controlled" class="govuk-link govuk-link--no-visited-state" href="/applications/45cf442d-550e-4ee7-91ac-2359cf97549d/goods/add-new/f727aaaf-0ea6-488f-b61c-1cdaf171ecad/edit-good/#pane_is_good_controlled">Change</a>
-
-      </dd>
-    </div>
-
 
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
@@ -172,52 +169,6 @@
 
       </dd>
     </div>
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Upload your section 5 letter of authority
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <a href="/none"> my-s5-auth-letter.pdf</a>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-
-                <a id="change-year-of-manufacture" class="govuk-link govuk-link--no-visited-state" href="/applications/45cf442d-550e-4ee7-91ac-2359cf97549d/goods/f727aaaf-0ea6-488f-b61c-1cdaf171ecad/edit-firearm-details/year-of-manufacture/">Change <span class="govuk-visually-hidden">Year of manufacture</span></a>
-
-            </dd>
-          </div>
-
-
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-          Reference number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            15665498
-          </dd>
-          <dd class="govuk-summary-list__actions">
-
-              <a id="change-good-grading" class="govuk-link govuk-link--no-visited-state" href="/applications/45cf442d-550e-4ee7-91ac-2359cf97549d/goods/add-new/f727aaaf-0ea6-488f-b61c-1cdaf171ecad/edit-grading/">Change</a>
-
-          </dd>
-        </div>
-
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-          Date
-          </dt>
-          <dd class="govuk-summary-list__value">
-            29 March 2023
-          </dd>
-          <dd class="govuk-summary-list__actions">
-
-              <a id="change-good-grading" class="govuk-link govuk-link--no-visited-state" href="/applications/45cf442d-550e-4ee7-91ac-2359cf97549d/goods/add-new/f727aaaf-0ea6-488f-b61c-1cdaf171ecad/edit-grading/">Change</a>
-
-          </dd>
-        </div>
-
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -256,18 +207,13 @@
     </dd>
   </div>
 
-
-
-
-
   </div>
 
-      <form action="/products-firearm-11-1" method="post" novalidate>
+  {% from "govuk/components/button/macro.njk" import govukButton %}
 
-        <input type="hidden" name="products-firearm-summary" value="true">
-
-  <button class="govuk-button" data-module="govuk-button">Continue</button>
-
-      </form>
+{{ govukButton({
+  text: "Delete product",
+  classes: "govuk-button--warning"
+}) }}
 
 {% endblock %}

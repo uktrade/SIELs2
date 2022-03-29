@@ -1,0 +1,210 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Product list
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+  		<ol class="govuk-breadcrumbs__list">
+  			<li class="govuk-breadcrumbs__list-item">
+  				<a class="govuk-breadcrumbs__link" href="/">
+  					Account home
+  				</a>
+  			</li>
+  			<li class="govuk-breadcrumbs__list-item">
+  				<a class="govuk-breadcrumbs__link" href="/goods/">
+  					Product list
+  				</a>
+  			</li>
+  			<li class="govuk-breadcrumbs__list-item">
+  				Product
+  			</li>
+  		</ol>
+  	</div>
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+
+    <h1 class="govuk-heading-xl">Product</h1>
+
+  <dl class="govuk-summary-list govuk-!-margin-bottom-9" id="good-detail-summary">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Select the type of firearm product
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Firearm
+      </dd>
+      <dd class="govuk-summary-list__actions">
+
+      </dd>
+    </div>
+
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Firearm category
+      </dt>
+      <dd class="govuk-summary-list__value">
+
+        Non automatic shotgun
+
+      </dd>
+      <dd class="govuk-summary-list__actions">
+
+
+      </dd>
+    </div>
+
+
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Give the product a descriptive name
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+              Blaser R8 professional bolt action rifle
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+
+
+          </dd>
+        </div>
+
+
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Do you know the product's control list entry?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Yes
+      </dd>
+      <dd class="govuk-summary-list__actions">
+
+
+      </dd>
+    </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Enter the control list entry
+      </dt>
+      <dd class="govuk-summary-list__value">
+        ML1a
+      </dd>
+      <dd class="govuk-summary-list__actions">
+
+      </dd>
+    </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Does the product have a government security grading or classification?
+      </dt>
+      <dd class="govuk-summary-list__value">
+
+          No
+
+      </dd>
+      <dd class="govuk-summary-list__actions">
+
+
+      </dd>
+    </div>
+
+
+
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        What is the calibre of the product?
+      </dt>
+      <dd class="govuk-summary-list__value">
+      .22
+      </dd>
+      <dd class="govuk-summary-list__actions">
+
+
+      </dd>
+    </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Is the product a replica firearm?
+      </dt>
+      <dd class="govuk-summary-list__value">
+      No
+      </dd>
+      <dd class="govuk-summary-list__actions">
+
+
+      </dd>
+    </div>
+
+      <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Which section of the Firearms Act 1968 is the product covered by?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Section 5
+      </dd>
+      <dd class="govuk-summary-list__actions">
+
+
+      </dd>
+    </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Do you have a document that shows what your product is and what it’s designed to do?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            </dd>
+      </div>
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+        Is the document rated above Official-sensitive?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No
+        </dd>
+        <dd class="govuk-summary-list__actions">
+            </dd>
+    </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+      Upload a document that shows what your product is designed to do
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <a href="/none"> my-tech-spec.pdf</a>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        </dd>
+  </div>
+
+  </div>
+
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Delete product",
+  classes: "govuk-button--warning"
+}) }}
+
+{% endblock %}
