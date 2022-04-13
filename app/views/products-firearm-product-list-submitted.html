@@ -30,7 +30,7 @@
 
 <div class="govuk-grid-row">
 
-    <h1 class="govuk-heading-xl">Product</h1>
+    <h1 class="govuk-heading-xl">Blaser R8 professional bolt action rifle</h1>
 
   <dl class="govuk-summary-list govuk-!-margin-bottom-9" id="good-detail-summary">
     <div class="govuk-summary-list__row">
@@ -205,6 +205,13 @@
 {{ govukButton({
   text: "Delete product",
   classes: "govuk-button--warning"
+}) }}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Copy and edit",
+  classes: "govuk-button--secondary"
 }) }}
 
 {% endblock %}
