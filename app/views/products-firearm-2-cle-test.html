@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/products-firearm-1">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Where does this control list entry apply?</h1>
+
+      <div>
+      <p>You have entered <b>ML1a</b></p>
+      </div>
+
+      <form class="form" action="/products-firearm-3" method="post">
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+  {{ govukRadios({
+    idPrefix: "cle",
+    name: "cle",
+    fieldset: {
+      legend: {
+        text: "Which destinations will this control list entry apply to?"
+      }
+    },
+    items: [
+      {
+        value: "eu",
+        text: "EU"
+      },
+      {
+        value: "non-EU",
+        text: "non-EU"
+      }
+
+    ]
+  }) }}
+
+</br>
+
+
+  {{ govukCheckboxes({
+    idPrefix: "contact",
+    name: "contact",
+    fieldset: {
+      legend: {
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
+      }
+    },
+
+    items: [
+      {
+        value: "add-another-cle",
+        text: "Add another control list entry"
+      }
+    ]
+  }) }}
+
+
+
+
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
