@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/products-check-rfd">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">You must be registered as a firearms dealer</h1>
+
+      <form class="form" action="/none" method="post">
+
+        <p>Any business that sells or transfers shotguns, firearms or ammunition must be registered with the police.</p>
+
+        <p>Contact Export Control Joint Unit on 020 7215 4594 for further information.</p>
+
+        <br>
+
+
+
+
+        <button class="govuk-button" data-module="govuk-button">Exit application</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
