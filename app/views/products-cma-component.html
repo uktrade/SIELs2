@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/products-cma-1">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Is the product a component?</h1>
+
+      <form class="form" action="/products-cma-component-answer" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+
+        {{ govukRadios({
+          idPrefix: "cma-component",
+name: "cma-component",
+fieldset: {
+  legend: {
+    isPageHeading: true,
+    classes: "govuk-fieldset__legend--l"
+  }
+},
+        items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+          }
+          ]
+        }) }}
+
+        <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Help with components and accessories
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p>A component is a constituent part or element of the product.</p>
+
+    <p>An accessory is an optional item that when fitted to a functioning product adds features or capability. An accessory can also be removed without detriment to the product.</p>
+    </div>
+</details>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

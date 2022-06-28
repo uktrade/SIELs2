@@ -1120,7 +1120,115 @@ router.post('/pic-2-answer', function (req, res) {
 })
 
 
+// Run this code when a form is submitted to 'products-1-2'
+router.post('/products-1-2-answer', function (req, res) {
 
+  // Make a variable and give it the value from 'products-1-2'
+  var categoryofproduct = req.session.data['category-of-product']
+
+  // Check whether the variable matches a condition
+  if (categoryofproduct == "Platform_vehicle_system_machine"){
+    // Send user to next page
+    res.redirect('/products-pvsm-deo-1')
+  }
+  if (categoryofproduct == "Device_equipment_object"){
+    // Send user to next page
+    res.redirect('/products-pvsm-deo-1')
+  }
+  if (categoryofproduct == "Components_modules_accessories_something"){
+    // Send user to next page
+    res.redirect('/products-cma-1')
+  }
+  if (categoryofproduct == "Materials_substances"){
+    // Send user to next page
+    res.redirect('/products-ms-1')
+  }
+  if (categoryofproduct == "Software"){
+    // Send user to next page
+    res.redirect('/products-nf-technology-software-1')
+  }
+  if (categoryofproduct == "Technology"){
+    // Send user to next page
+    res.redirect('/products-nf-technology-software-1')
+  }
+  if (categoryofproduct == "Firearms"){
+    // Send user to next page
+    res.redirect('/products-2')
+  }
+})
+
+
+// Run this code when a form is submitted to 'products-pvsm-deo-3'
+router.post('/products-pvsm-deo-3-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-pvsm-deo-3'
+  var securitygrading = req.session.data['security-grading']
+
+  // Check whether the variable matches a condition
+  if (securitygrading == "Yes"){
+    // Send user to next page
+    res.redirect('/products-pvsm-deo-4')
+  }
+    if (securitygrading == "No"){
+      // Send user to next page
+      res.redirect('/products-pvsm-deo-5')
+    }
+})
+
+
+// Run this code when a form is submitted to 'products-cma-3'
+router.post('/products-cma-3-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-cma-3'
+  var securitygrading = req.session.data['security-grading']
+
+  // Check whether the variable matches a condition
+  if (securitygrading == "Yes"){
+    // Send user to next page
+    res.redirect('/products-cma-4')
+  }
+    if (securitygrading == "No"){
+      // Send user to next page
+      res.redirect('/products-cma-5')
+    }
+})
+
+
+// Run this code when a form is submitted to 'products-ms-3'
+router.post('/products-ms-3-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-ms-3'
+  var securitygrading = req.session.data['security-grading']
+
+  // Check whether the variable matches a condition
+  if (securitygrading == "Yes"){
+    // Send user to next page
+    res.redirect('/products-ms-4')
+  }
+    if (securitygrading == "No"){
+      // Send user to next page
+      res.redirect('/products-ms-5')
+    }
+})
+
+
+
+// Run this code when a form is submitted to 'products-cma-component'
+router.post('/products-cma-component-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-cma-component'
+  var cmacomponent = req.session.data['cma-component']
+
+  // Check whether the variable matches a condition
+  if (cmacomponent == "Yes"){
+    // Send user to next page
+    res.redirect('/products-cma-component-2')
+  }
+    if (cmacomponent == "No"){
+      // Send user to next page
+      res.redirect('/products-cma-2')
+    }
+})
 
 
 

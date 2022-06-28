@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/products-1-1">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Select the product category</h1>
+
+      <form class="form" action="/products-1-2-answer" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "category-of-product",
+          name: "category-of-product",
+          fieldset: {
+            legend: {
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "Platform_vehicle_system_machine",
+              text: "Platform, vehicle, system or machine"
+            },
+            {
+              value: "Device_equipment_object",
+              text: "Device, equipment or object"
+            },
+            {
+              value: "Components_modules_accessories_something",
+              text: "Components, modules or accessories of something"
+            },
+            {
+              value: "Materials_substances",
+              text: "Materials or substances"
+            },
+            {
+              value: "Software",
+              text: "Software"
+            },
+            {
+                value: "Technology",
+                text: "Technology"
+              },
+            {
+                value: "Firearms",
+                text: "Firearms"
+              }
+          ]
+        }) }}
+
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
