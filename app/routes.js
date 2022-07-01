@@ -1171,7 +1171,7 @@ router.post('/products-pvsm-deo-3-answer', function (req, res) {
   }
     if (securitygrading == "No"){
       // Send user to next page
-      res.redirect('/products-pvsm-deo-5')
+      res.redirect('/products-pvsm-deo-info-security')
     }
 })
 
@@ -1189,7 +1189,7 @@ router.post('/products-cma-3-answer', function (req, res) {
   }
     if (securitygrading == "No"){
       // Send user to next page
-      res.redirect('/products-cma-5')
+      res.redirect('/products-cma-info-security')
     }
 })
 
@@ -1227,6 +1227,185 @@ router.post('/products-cma-component-answer', function (req, res) {
     if (cmacomponent == "No"){
       // Send user to next page
       res.redirect('/products-cma-2')
+    }
+})
+
+
+// Run this code when a form is submitted to 'products-pvsm-deo-10-1'
+router.post('/products-pvsm-deo-10-1-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-pvsm-deo-10-1'
+  var techspec = req.session.data['tech-spec']
+
+  // Check whether the variable matches a condition
+  if (techspec == "Yes"){
+    // Send user to next page
+    res.redirect('/products-pvsm-deo-10-2')
+  }
+    if (techspec == "No"){
+      // Send user to next page
+      res.redirect('/products-pvsm-deo-purpose')
+    }
+})
+
+
+// Run this code when a form is submitted to 'products-cma-10-1'
+router.post('/products-cma-10-1-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-cma-10-1'
+  var techspec = req.session.data['tech-spec']
+
+  // Check whether the variable matches a condition
+  if (techspec == "Yes"){
+    // Send user to next page
+    res.redirect('/products-cma-10-2')
+  }
+    if (techspec == "No"){
+      // Send user to next page
+      res.redirect('/products-cma-summary')
+    }
+})
+
+
+// Run this code when a form is submitted to 'products-ms-10-1'
+router.post('/products-ms-10-1-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-ms-10-1'
+  var techspec = req.session.data['tech-spec']
+
+  // Check whether the variable matches a condition
+  if (techspec == "Yes"){
+    // Send user to next page
+    res.redirect('/products-ms-10-2')
+  }
+    if (techspec == "No"){
+      // Send user to next page
+      res.redirect('/products-ms-summary')
+    }
+})
+
+// Run this code when a form is submitted to 'products-nf-technology-software-10-1'
+router.post('/products-nf-technology-software-10-1-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-nf-technology-software-10-1'
+  var techspec = req.session.data['tech-spec']
+
+  // Check whether the variable matches a condition
+  if (techspec == "Yes"){
+    // Send user to next page
+    res.redirect('/products-nf-technology-software-10-2')
+  }
+    if (techspec == "No"){
+      // Send user to next page
+      res.redirect('/products-nf-technology-software-summary')
+    }
+})
+
+
+
+// Run this code when a form is submitted to 'products-pvsm-deo-10-2'
+router.post('/products-pvsm-deo-10-2-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-pvsm-deo-10-2'
+  var techspecrating = req.session.data['tech-spec-rating']
+
+  // Check whether the variable matches a condition
+  if (techspecrating == "No"){
+    // Send user to next page
+    res.redirect('/products-pvsm-deo-10-3')
+  }
+    if (techspecrating == "Yes"){
+      // Send user to next page
+      res.redirect('/products-pvsm-deo-summary')
+    }
+})
+
+
+// Run this code when a form is submitted to 'products-cma-10-2'
+router.post('/products-cma-10-2-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-cma-10-2'
+  var techspecrating = req.session.data['tech-spec-rating']
+
+  // Check whether the variable matches a condition
+  if (techspecrating == "No"){
+    // Send user to next page
+    res.redirect('/products-cma-10-3')
+  }
+    if (techspecrating == "Yes"){
+      // Send user to next page
+      res.redirect('/products-cma-summary')
+    }
+})
+
+
+// Run this code when a form is submitted to 'products-ms-10-2'
+router.post('/products-ms-10-2-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-ms-10-2'
+    var techspecrating = req.session.data['tech-spec-rating']
+
+  // Check whether the variable matches a condition
+  if (techspecrating == "No"){
+    // Send user to next page
+    res.redirect('/products-ms-10-3')
+  }
+    if (techspecrating == "Yes"){
+      // Send user to next page
+      res.redirect('/products-ms-summary')
+    }
+})
+
+// Run this code when a form is submitted to 'products-nf-technology-software-10-2'
+router.post('/products-nf-technology-software-10-2-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-nf-technology-software-10-2'
+  var techspecrating = req.session.data['tech-spec-rating']
+
+  // Check whether the variable matches a condition
+  if (techspecrating == "No"){
+    // Send user to next page
+    res.redirect('/products-nf-technology-software-10-3')
+  }
+    if (techspecrating == "Yes"){
+      // Send user to next page
+      res.redirect('/products-nf-technology-software-summary')
+    }
+})
+
+
+// Run this code when a form is submitted to 'products-pvsm-deo-12-1'
+router.post('/products-pvsm-deo-12-1-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-pvsm-deo-12-1'
+  var exportedagain = req.session.data['exported-again']
+
+  // Check whether the variable matches a condition
+  if (exportedagain == "Yes"){
+    // Send user to next page
+    res.redirect('/products-pvsm-deo-12-2')
+  }
+    if (exportedagain == "No"){
+      // Send user to next page
+      res.redirect('/products-pvsm-deo-15')
+    }
+})
+
+
+// Run this code when a form is submitted to 'products-cma-12-1'
+router.post('/products-cma-12-1-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-cma-12-1'
+  var exportedagain = req.session.data['exported-again']
+
+  // Check whether the variable matches a condition
+  if (exportedagain == "Yes"){
+    // Send user to next page
+    res.redirect('/products-cma-12-2')
+  }
+    if (exportedagain == "No"){
+      // Send user to next page
+      res.redirect('/products-cma-15')
     }
 })
 

@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/products-cma-4">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl">What type of component is it?</h1>
+
+            <form class="form" action="/products-cma-2" method="post">
+
+              {% from "govuk/components/radios/macro.njk" import govukRadios %}
+              {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+
+              {% set speHtml %}
+              {{ govukTextarea({
+                name: "explain-sn",
+                id: "explain-sn",
+                label: {
+                  text: "Provide details of the specific hardware"
+                }
+              }) }}
+              {% endset -%}
+
+              {% set modHtml %}
+              {{ govukTextarea({
+                name: "explain-sn",
+                id: "explain-sn",
+                label: {
+                  text: "Provide details of the modifications and the specific hardware"
+                }
+              }) }}
+              {% endset -%}
+
+              {% set genHtml %}
+              {{ govukTextarea({
+                name: "explain-sn",
+                id: "explain-sn",
+                label: {
+                  text: "Provide details of the intended general-purpose use"
+                }
+              }) }}
+              {% endset -%}
+
+
+
+                          {{ govukRadios({
+                idPrefix: "sn",
+      name: "sn",
+      fieldset: {
+        legend: {
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+
+              items: [
+                  {
+                    value: "Yes-specially",
+                    text: "Specially designed for hardware",
+                    conditional: {
+              html: speHtml
+            }
+                  },
+
+                  {
+                    value: "modified",
+                    text: "Modified for hardware",
+                    conditional: {
+              html: modHtml
+            }
+                  },
+
+                  {
+                    value: "general-purpose",
+                    text: "General-purpose component",
+                    conditional: {
+              html: genHtml
+            }
+                                  }
+                ]
+              }) }}
+
+
+              <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+            </form>
+
+          </div>
+        </div>
+
+      {% endblock %}

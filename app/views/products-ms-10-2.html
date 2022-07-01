@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/products-ms-10-1">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Is the document rated above Official-sensitive?</h1>
+
+      <form class="form" action="/products-ms-10-2-answer" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {% set yesHtml %}
+        <div>
+        <p>Contact Export Control Joint Unit on 020 7215 4594 to arrange a secure way to send this document. You can continue with this application without attaching a document.</p>
+<p><a class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank" href="https://www.gov.uk/call-charges">Find out about call charges (opens in new tab)</a></p>
+        </div>
+        {% endset -%}
+
+        {{ govukRadios({
+          idPrefix: "tech-spec-rating",
+name: "tech-spec-rating",
+fieldset: {
+  legend: {
+    isPageHeading: true,
+    classes: "govuk-fieldset__legend--l"
+  }
+},
+
+        items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              conditional: {
+        html: yesHtml
+      }
+            },
+            {
+              value: "No",
+              text: "No"
+          }
+          ]
+        }) }}
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

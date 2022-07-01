@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/products-pvsm-deo-3">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl">Does the product include security features to protect information?</h1>
+
+            <p>For example, authentication, encryption or any other information security controls.</p>
+
+            <form class="form" action="/products-pvsm-deo-10-1" method="post">
+
+              {% from "govuk/components/radios/macro.njk" import govukRadios %}
+              {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+              {% set noHtml %}
+              {{ govukTextarea({
+                name: "explain-info-sec",
+                id: "explain-info-sec",
+                label: {
+                  text: "Provide details of the information security features"
+                }
+              }) }}
+              {% endset -%}
+
+                          {{ govukRadios({
+                idPrefix: "info-sec",
+      name: "info-sec",
+      fieldset: {
+        legend: {
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+
+              items: [
+                                    {
+                    value: "Yes",
+                    text: "Yes",
+                    conditional: {
+              html: noHtml
+            }
+                  },
+
+                  {
+                    value: "No",
+                    text: "No"
+                                  }
+                ]
+              }) }}
+
+
+              <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+            </form>
+
+          </div>
+        </div>
+
+      {% endblock %}
