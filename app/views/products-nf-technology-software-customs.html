@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="/products-cma-info-security">Back</a>
+  <a class="govuk-back-link" href="/products-nf-technology-software-info-security">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -13,29 +13,17 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Do you have a document that shows what your product is and what it’s designed to do?</h1>
+      <h1 class="govuk-heading-xl">Is the product export declared at customs??</h1>
 
-      <p>For example, a technical specification, datasheet, sales brochure or something else that fully describes the product details.</p>
-
-<p>This is required in order to process the application.</p>
-      <form class="form" action="/products-cma-10-1-answer" method="post">
+      <form class="form" action="/products-nf-technology-software-10-1" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
-{% set noHtml %}
-{{ govukTextarea({
-  name: "explain-processing",
-  id: "explain-processing",
-  label: {
-    text: "Explain why you are not able to upload a product document. This may delay your application."
-  }
-}) }}
-{% endset -%}
 
         {{ govukRadios({
-          idPrefix: "tech-spec",
-name: "tech-spec",
+          idPrefix: "customs",
+name: "customs",
 fieldset: {
   legend: {
     isPageHeading: true,
@@ -50,7 +38,7 @@ fieldset: {
             },
             {
               value: "No",
-              text: "No",
+              text: "No, the product is sent electronically",
               conditional: {
         html: noHtml
       }

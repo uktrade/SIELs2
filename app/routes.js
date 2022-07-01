@@ -1207,7 +1207,26 @@ router.post('/products-ms-3-answer', function (req, res) {
   }
     if (securitygrading == "No"){
       // Send user to next page
-      res.redirect('/products-ms-5')
+      res.redirect('/products-ms-info-security')
+    }
+})
+
+
+
+// Run this code when a form is submitted to 'products-nf-technology-software-3'
+router.post('/products-nf-technology-software-3-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-nf-technology-software-3'
+  var securitygrading = req.session.data['security-grading']
+
+  // Check whether the variable matches a condition
+  if (securitygrading == "Yes"){
+    // Send user to next page
+    res.redirect('/products-nf-technology-software-4')
+  }
+    if (securitygrading == "No"){
+      // Send user to next page
+      res.redirect('/products-nf-technology-software-info-security')
     }
 })
 
@@ -1262,7 +1281,7 @@ router.post('/products-cma-10-1-answer', function (req, res) {
   }
     if (techspec == "No"){
       // Send user to next page
-      res.redirect('/products-cma-summary')
+      res.redirect('/products-cma-purpose')
     }
 })
 
@@ -1280,7 +1299,7 @@ router.post('/products-ms-10-1-answer', function (req, res) {
   }
     if (techspec == "No"){
       // Send user to next page
-      res.redirect('/products-ms-summary')
+      res.redirect('/products-ms-purpose')
     }
 })
 
@@ -1297,7 +1316,7 @@ router.post('/products-nf-technology-software-10-1-answer', function (req, res) 
   }
     if (techspec == "No"){
       // Send user to next page
-      res.redirect('/products-nf-technology-software-summary')
+      res.redirect('/products-nf-technology-software-purpose')
     }
 })
 
@@ -1409,6 +1428,23 @@ router.post('/products-cma-12-1-answer', function (req, res) {
     }
 })
 
+
+// Run this code when a form is submitted to 'products-ms-12-1'
+router.post('/products-ms-12-1-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-ms-12-1'
+  var exportedagain = req.session.data['exported-again']
+
+  // Check whether the variable matches a condition
+  if (exportedagain == "Yes"){
+    // Send user to next page
+    res.redirect('/products-ms-12-2')
+  }
+    if (exportedagain == "No"){
+      // Send user to next page
+      res.redirect('/products-ms-15')
+    }
+})
 
 
 
