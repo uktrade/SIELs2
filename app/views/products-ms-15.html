@@ -17,11 +17,53 @@
 
       <form class="form" action="/products-ms-summary-part-2" method="post">
 
+
         {% from "govuk/components/input/macro.njk" import govukInput %}
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  idPrefix: "measurements",
+  name: "measurements",
+  fieldset: {
+    legend: {
+      text: "Unit of measurement"
+    }
+  },
+  items: [
+    {
+      value: "Number-of-items",
+      text: "Number of items"
+    },
+    {
+      value: "grams",
+      text: "Grams"
+    },
+    {
+      value: "kilograms",
+      text: "Kilograms"
+    },
+    {
+      value: "square-metres",
+      text: "Square metres"
+    },
+    {
+      value: "metres",
+      text: "Metres"
+    },
+    {
+      value: "litres",
+      text: "Litres"
+    },
+    {
+      value: "cubic-metres",
+      text: "Cubic metres"
+    }
+  ]
+}) }}
 
 {{ govukInput({
   label: {
-    text: "Number of items"
+    text: "Quantity"
   },
   classes: "govuk-input--width-10",
   id: "quantity",

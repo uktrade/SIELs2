@@ -1447,6 +1447,23 @@ router.post('/products-ms-12-1-answer', function (req, res) {
 })
 
 
+// Run this code when a form is submitted to 'products-nf-technology-software-12-1'
+router.post('/products-nf-technology-software-12-1-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-nf-technology-software-12-1'
+  var exportedagain = req.session.data['exported-again']
+
+  // Check whether the variable matches a condition
+  if (exportedagain == "Yes"){
+    // Send user to next page
+    res.redirect('/products-nf-technology-software-12-2')
+  }
+    if (exportedagain == "No"){
+      // Send user to next page
+      res.redirect('/products-nf-technology-software-15')
+    }
+})
+
 
 
 
