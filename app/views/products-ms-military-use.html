@@ -13,53 +13,53 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-            <h1 class="govuk-heading-xl">Is the product for military use?</h1>
+            <h1 class="govuk-heading-xl">Is the product specially designed or modified for military use?</h1>
 
             <form class="form" action="/products-ms-summary" method="post">
 
               {% from "govuk/components/radios/macro.njk" import govukRadios %}
-              {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+                {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
-              {% set noHtml %}
-              {{ govukTextarea({
-                name: "explain-sn",
-                id: "explain-sn",
-                label: {
-                  text: "Provide details of the modifications"
-                }
-              }) }}
-              {% endset -%}
+                {% set noHtml %}
+                {{ govukTextarea({
+                  name: "explain-sn",
+                  id: "explain-sn",
+                  label: {
+                    text: "Provide details of the modifications"
+                  }
+                }) }}
+                {% endset -%}
 
-                          {{ govukRadios({
-                idPrefix: "sn",
-      name: "sn",
-      fieldset: {
-        legend: {
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--l"
-        }
-      },
+                            {{ govukRadios({
+                  idPrefix: "sn",
+        name: "sn",
+        fieldset: {
+          legend: {
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
 
-              items: [
-                  {
-                    value: "Yes-specially",
-                    text: "Yes, it is specially designed for military use"
-                  },
+                items: [
+                    {
+                      value: "Yes-specially",
+                      text: "Yes, it is specially designed for military use"
+                    },
 
-                  {
-                    value: "Yes-later",
-                    text: "Yes, modified for military use",
-                    conditional: {
-              html: noHtml
-            }
-                  },
+                    {
+                      value: "Yes-modified",
+                      text: "Yes, it is modified for military use",
+                      conditional: {
+                html: noHtml
+              }
+                    },
 
-                  {
-                    value: "No",
-                    text: "No"
-                                  }
-                ]
-              }) }}
+                    {
+                      value: "No",
+                      text: "No"
+                                    }
+                  ]
+                }) }}
 
 
               <button class="govuk-button" data-module="govuk-button">Continue</button>
