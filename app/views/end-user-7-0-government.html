@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/end-user-6">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Do you have an end-user document?</h1>
+
+      <p class="govuk-body">You will be asked to upload either an <a href="https://www.gov.uk/government/publications/end-user-undertaking-euu-form"> end-user undertaking</a>, <a href="https://www.gov.uk/government/publications/stockist-undertaking-su-form">stockist undertaking</a> completed by the end-user or stockist or a purchase invoice.</p>
+      <p>You must include at least one page on company letterhead. This can either be within the end-user document or on a separate document.</p>
+      <p> Products listed in the document should match as closely as possible to the products listed in the application.</p>
+      <p> All products on the application must appear in the document.</p>
+      <br>
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+      {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+      {% set noeuuHtml %}
+{{ govukTextarea({
+    name: "no-euu",
+    id: "no-euu",
+    hint: {
+      text: "Explain why you do not have an end-user undertaking or stockist undertaking."
+    }
+  }) }}
+  {{ govukDetails({
+    summaryText: "Help with the end-user document",
+    text: "You may not need to provide an end-user document if... lorem ipsum."
+  }) }}
+{% endset -%}
+
+
+
+{{ govukRadios({
+  idPrefix: "euu",
+  name: "euu",
+
+  items: [
+  {
+     value: "yes",
+     text: "Yes"
+   },
+      {
+      value: "euu-no",
+      text: "No, I do not have an end-user undertaking or stockist undertaking",
+      conditional: {
+        html: noeuuHtml
+      }
+    }
+  ]
+}) }}
+
+
+      <form class="form" action="/end-user-7-government" method="post">
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

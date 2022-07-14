@@ -15,8 +15,6 @@
 
       <h1 class="govuk-heading-xl">Do you have a prior import consent document?</h1>
 
-      <p>You will usually need a prior import consent document to export civil firearm products. If you do not provide one, this may delay processing of your case or result in your licence application being refused.</p>
-
       <form class="form" action="/pic-1-answer" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
@@ -31,7 +29,7 @@
               classes: "govuk-label--l"
         },
         hint: {
-          text: "Explain why you do not have a prior import consent document"
+          text: "Explain why you do not have a prior import consent document (optional)"
         }
               }) }}
         {% endset -%}

@@ -1466,8 +1466,62 @@ router.post('/products-nf-technology-software-12-1-answer', function (req, res) 
 
 
 
+// Run this code when a form is submitted to 'products-1-categories-2'
+router.post('/products-1-categories-2-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'products-1-categories-2'
+  var categoryofproduct2 = req.session.data['category-of-product-2']
+
+  // Check whether the variable matches a condition
+  if (categoryofproduct2 == "complete"){
+    // Send user to next page
+    res.redirect('/products-pvsm-deo-1')
+  }
+  if (categoryofproduct2 == "makes_up"){
+    // Send user to next page
+    res.redirect('/products-1-categories-3')
+  }
+  if (categoryofproduct2 == "operates"){
+    // Send user to next page
+    res.redirect('/products-nf-technology-software-1')
+  }
+  })
 
 
+  // Run this code when a form is submitted to 'products-1-categories-1'
+  router.post('/products-1-categories-1-answer', function (req, res) {
+
+    // Make a variable and give it the value from 'products-1-categories-1'
+    var firearmproduct = req.session.data['firearm-product']
+
+    // Check whether the variable matches a condition
+    if (firearmproduct == "Yes"){
+      // Send user to next page
+      res.redirect('/products-2')
+    }
+    if (firearmproduct == "No"){
+      // Send user to next page
+      res.redirect('/products-1-categories-2')
+    }
+    })
+
+
+    // Run this code when a form is submitted to 'products-1-categories-3'
+    router.post('/products-1-categories-3-answer', function (req, res) {
+
+      // Make a variable and give it the value from 'products-1-categories-3'
+      var ms = req.session.data['ms']
+
+      // Check whether the variable matches a condition
+      if (ms == "Yes"){
+        // Send user to next page
+        res.redirect('/products-ms-1')
+      }
+      if (ms == "No"){
+        // Send user to next page
+        res.redirect('/products-cma-1')
+      }
+      })
 
 
 
