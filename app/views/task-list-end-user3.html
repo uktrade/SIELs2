@@ -1,0 +1,162 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Task list
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Apply for a standard individual export licence
+      </h1>
+
+      <form class="form" action="/success" method="post">
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application incomplete</h2>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 6 of 9 mandatory sections.</p>
+
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span>Create  application
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+
+                  Select licence type
+              </span>
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Complete</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/reference-1" aria-describedby="company-information-status">
+                  Choose a reference name
+                </a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Complete</strong>
+              </li>
+          </ul>
+        </li>
+
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span>Complete export details
+          </h2>
+          <ul class="app-task-list__items">
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="location-1" aria-describedby="contact-details-status">
+                  Provide product location and journey
+                </a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Complete</strong>
+            </li>
+
+                    <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/products-1-1" aria-describedby="list-convictions-status">
+                Tell us about the products
+                </a>
+              </span>
+  <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Complete</strong>
+                </li>
+
+            <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+      <a href="/end-use-0-1" aria-describedby="list-convictions-status">
+      Describe how the products will be used
+      </a>
+    </span>
+    <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Complete</strong>
+  </li>
+            </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">3. </span> Tell us who is involved
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/end-user-1" aria-describedby="list-convictions-status">
+                Add an end-user
+                </a>
+              </span>
+            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Complete</strong>
+            </li>
+
+                    </ul>
+        </li>
+
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">4. </span> Additional information
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/supporting-documents" aria-describedby="list-convictions-status">
+                Upload supporting documents
+                    </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="supporting-information-status">Optional</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/supporting-notes" aria-describedby="list-convictions-status">
+                Add notes for case officers
+                    </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="supporting-information-status">Optional</strong>
+            </li>
+          </ul>
+        </li>
+
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">5. </span> Finalise application
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/criminal-convictions-gb" aria-describedby="list-convictions-status">
+                Disclose criminal convictions
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">not started</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+
+                Make declaration
+
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">cannot start yet</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+
+                Agree to Freedom of Information
+
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">cannot start yet</strong>
+            </li>
+          </ul>
+        </li>
+        </ol>
+        </div>
+        </div>
+
+
+        </form>
+
+
+        {% endblock %}
