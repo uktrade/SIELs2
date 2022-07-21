@@ -15,43 +15,41 @@
 
       <h1 class="govuk-heading-xl">Upload an end-user document</h1>
 
-      <p class="govuk-body">Upload an <a href="https://www.gov.uk/government/publications/end-user-undertaking-euu-form"> end-user undertaking (EUU)</a>, <a href="https://www.gov.uk/government/publications/stockist-undertaking-su-form">stockist undertaking (SU) or a purchase invoice.</a></p>
+      <p class="govuk-body">Upload an <a href="https://www.gov.uk/government/publications/end-user-undertaking-euu-form"> end-user undertaking (EUU)</a>, <a href="https://www.gov.uk/government/publications/stockist-undertaking-su-form">stockist undertaking (SU)</a> or a purchase invoice.</p>
 
-<p>When the end-user is a government, you can attach a purchase order instead of an EUU or SU.</p>
-
-<p>Files must be smaller than 50MB.</p>
-
-      <form class="form" action="/end-user-7-answer" method="post">
+      <form class="form" action="/pic-1" method="post">
 
         {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
 
-{{ govukFileUpload({
-  id: "file-upload-euu",
-  name: "file-upload-euu"
-}) }}
+      {{ govukFileUpload({
+    id: "file-upload-euu",
+    name: "file-upload-euu"
+    }) }}
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
 
-{% set noHtml %}
-{{ govukFileUpload({
-  id: "file-upload-not-english",
-  name: "file-upload-not-english",
-  label: {
-    text: "Upload an English translation. The translated version must be on company letterhead and verified by the exporter. "
-  }
-}) }}
-{% endset -%}
+    {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
-{{ govukRadios({
-  idPrefix: "in-english",
-  name: "in-english",
-  fieldset: {
+    {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+    {{ govukTextarea({
+      name: "euu description",
+      id: "euu description",
+      label: {
+      text: "Describe any differences between products listed in the document and products on the application (optional)"
+    }
+    }) }}
+
+    {{ govukRadios({
+    idPrefix: "in-english",
+    name: "in-english",
+    fieldset: {
     legend: {
       text: "Is the end-user document in English?"
     }
-  },
-  items: [
+    },
+    items: [
     {
       value: "Yes",
       text: "Yes"
@@ -60,25 +58,34 @@
       value: "No",
       text: "No"
     }
-  ]
-}) }}
+    ]
+    }) }}
 
-        <details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Help with end-user documents
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    <p>The EUU or SU should be completed by the end-user or stockist.</p>
-  </div>
-</details>
+    {{ govukRadios({
+    idPrefix: "letterhead",
+    name: "letterhead",
+    fieldset: {
+    legend: {
+      text: "Does the document include at least one page on company letterhead?"
+    }
+    },
+    items: [
+    {
+      value: "Yes-letterhead",
+      text: "Yes"
+    },
+    {
+      value: "No-letterhead",
+      text: "No"
+    }
+    ]
+    }) }}
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
 
     </div>
-  </div>
+    </div>
 
-{% endblock %}
+    {% endblock %}

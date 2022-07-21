@@ -221,24 +221,6 @@ router.post('/products-firearm-13-answer', function (req, res) {
 })
 
 
-// Run this code when a form is submitted to 'end-user-7'
-router.post('/end-user-7-answer', function (req, res) {
-
-  // Make a variable and give it the value from 'end-user-7'
-  var inenglish = req.session.data['in-english']
-
-  // Check whether the variable matches a condition
-  if (inenglish == "Yes"){
-    // Send user to next page
-    res.redirect('/end-user-9')
-  }
-    if (inenglish == "No"){
-      // Send user to next page
-      res.redirect('/end-user-8')
-    }
-})
-
-
 
 // Run this code when a form is submitted to 'end-use-3'
 router.post('/end-use-3-answer', function (req, res) {
@@ -1207,7 +1189,7 @@ router.post('/products-ms-3-answer', function (req, res) {
   }
     if (securitygrading == "No"){
       // Send user to next page
-      res.redirect('/products-ms-info-security')
+      res.redirect('/products-ms-10-1')
     }
 })
 
@@ -1371,7 +1353,7 @@ router.post('/products-ms-10-2-answer', function (req, res) {
   }
     if (techspecrating == "Yes"){
       // Send user to next page
-      res.redirect('/products-ms-summary')
+      res.redirect('/products-ms-military-use')
     }
 })
 
