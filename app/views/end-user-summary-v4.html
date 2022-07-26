@@ -5,82 +5,93 @@
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="/end-user-7">Back</a>
+  <a class="govuk-back-link" href="/end-user-7-government">Back</a>
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
 
-      <h1 class="govuk-heading-xl">End-user summary</h1>
+    <h1 class="govuk-heading-xl">'[End-user name]' has been saved</h1>
 
-      <form class="form" action="/task-list" method="post">
+    <p>These details have been saved to your account so that you can reuse them for future applications.
+
+      <form class="form" action="/task-list-end-user" method="post">
 
 
 
         <dl class="govuk-summary-list">
 
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key ">
-              Select the type of end-user
-            </dt>
-            <dd id="type" class="govuk-summary-list__value">
-              Your answer here
-            </dd>
-            <dd class="govuk-summary-list__actions">
-                <a class="govuk-link govuk-link--no-visited-state" href="/none">Change</a>
-    </dd>
-          </div>
-
-  			<div class="govuk-summary-list__row">
-  				<dt class="govuk-summary-list__key ">
-  					End-user name
-  				</dt>
-  				<dd id="name" class="govuk-summary-list__value">
-  					Your answer here
-  				</dd>
-          <dd class="govuk-summary-list__actions">
-              <a class="govuk-link govuk-link--no-visited-state" href="/none">Change</a>
-  </dd>
-  			</div>
-
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key ">
-            End-user website (optional)
+            Select the type of end-user
           </dt>
-          <dd id="website" class="govuk-summary-list__value">
-            <a class="govuk-link govuk-link--no-visited-state" href="/none">www.youranswerhere.co.uk</a>
+          <dd id="type" class="govuk-summary-list__value">
+            Government
           </dd>
           <dd class="govuk-summary-list__actions">
               <a class="govuk-link govuk-link--no-visited-state" href="/none">Change</a>
-      </dd>
+  </dd>
         </div>
 
-  			<div class="govuk-summary-list__row">
-  				<dt class="govuk-summary-list__key ">
-  					End-user address
-  				</dt>
-  				<dd id="address" class="govuk-summary-list__value">
-  					Your answer here
-  				</dd>
-          <dd class="govuk-summary-list__actions">
-              <a class="govuk-link govuk-link--no-visited-state" href="/none">Change</a>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key ">
+          End-user name
+        </dt>
+        <dd id="name" class="govuk-summary-list__value">
+          Your answer here
+        </dd>
+        <dd class="govuk-summary-list__actions">
+            <a class="govuk-link govuk-link--no-visited-state" href="/none">Change</a>
   </dd>
-  			</div>
+      </div>
 
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key ">
+          End-user website (optional)
+        </dt>
+        <dd id="website" class="govuk-summary-list__value">
+          <a class="govuk-link govuk-link--no-visited-state" href="/none">www.youranswerhere.co.uk</a>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+            <a class="govuk-link govuk-link--no-visited-state" href="/none">Change</a>
+    </dd>
+      </div>
 
-
-  			<div class="govuk-summary-list__row">
-  				<dt class="govuk-summary-list__key ">
-  					Signatory name
-  				</dt>
-  				<dd id="signatory_name" class="govuk-summary-list__value">
-  					Your answer here
-  				</dd>
-          <dd class="govuk-summary-list__actions">
-              <a class="govuk-link govuk-link--no-visited-state" href="/none">Change</a>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key ">
+          End-user address
+        </dt>
+        <dd id="address" class="govuk-summary-list__value">
+          Your answer here
+        </dd>
+        <dd class="govuk-summary-list__actions">
+            <a class="govuk-link govuk-link--no-visited-state" href="/none">Change</a>
   </dd>
-  			</div>
+      </div>
+
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key ">
+          Signatory name
+        </dt>
+        <dd id="signatory_name" class="govuk-summary-list__value">
+          Your answer here
+        </dd>
+        <dd class="govuk-summary-list__actions">
+            <a class="govuk-link govuk-link--no-visited-state" href="/none">Change</a>
+  </dd>
+      </div>
+
+
+      </dl>
+
+      <br>
+
+      <h2 class="govuk-heading-m">End-user documents</h2>
+
+        <dl class="govuk-summary-list">
 
   			<div class="govuk-summary-list__row">
   				<dt class="govuk-summary-list__key ">

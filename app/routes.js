@@ -1317,7 +1317,7 @@ router.post('/products-pvsm-deo-10-2-answer', function (req, res) {
   }
     if (techspecrating == "Yes"){
       // Send user to next page
-      res.redirect('/products-pvsm-deo-summary')
+      res.redirect('/products-pvsm-deo-military-use')
     }
 })
 
