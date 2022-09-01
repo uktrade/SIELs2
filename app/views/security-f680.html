@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="/products-firearm-2">Back</a>
+  <a class="govuk-back-link" href="/task-list-start">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -13,11 +13,51 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Does the product have a security grading, or an MOD security approval?</h1>
+      <h1 class="govuk-heading-xl">Do you have a Ministry of Defence security approval?</h1>
 
-      <form class="form" action="/products-firearm-3-answer" method="post">
+      <p>Some security classified products need an approval form before they can be exported.</p>
+
+      <form class="form" action="/task-list-start" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+        {% set f680Html %}
+{{ govukInput({
+  id: "f680ref",
+  name: "f680ref",
+  spellcheck: false,
+  classes: "govuk-!-width-two-third",
+  label: {
+    text: "Enter the F680 reference number"
+  }
+}) }}
+{% endset -%}
+
+
+
+  {% set f1686Html %}
+
+{{ govukInput({
+  id: "ref",
+  name: "f1686_authority",
+  spellcheck: false,
+  classes: "govuk-!-width-two-third",
+  label: {
+    text: "Enter details of the contracting authority or signatory"
+  }
+}) }}
+
+{{ govukFileUpload({
+  id: "file-upload-f1686",
+  name: "file-upload-1",
+  label: {
+    text: "Upload the approval document (optional)"
+  }
+}) }}
+
+{% endset -%}
 
 
         {{ govukRadios({
@@ -31,42 +71,38 @@ fieldset: {
 },
 
         items: [
+        {
+            value: "No",
+            text: "No, I don't need an approval for my products"
+          },
             {
-              value: "Yes",
-              text: "Yes, it has a security grading or classification",
-              hint: {
-                text: "For example, UK Official or NATO Restricted, including Unclassified."}
+              value: "f680",
+              text: "Yes, I have an F680 approval",
+              conditional: {
+              html: f680Html
+            }
             },
             {
-              value: "Yes_approval",
-              text: "Yes, it has an F680 or F1686 MOD approval"
-            },
-                      {
-              value: "No",
-              text: "No"
-          }
+              value: "f1686",
+              text: "Yes, I have an F1686 approval",
+              conditional: {
+              html: f1686Html
+            }
+            }
           ]
         }) }}
 
         <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">
-        Help with security gradings
+        Help with security approvals
         </span>
         </summary>
         <div class="govuk-details__text">
-        <p>The government classifies information assets to ensure they are appropriately protected.</p>
+      <p>Exporters must obtain MOD Form 680 approval in order to release information or equipment classified Official-senstive and above to foreign entities.</p>
+      <p><a href="https://www.gov.uk/government/publications/ministry-of-defence-form-680-procedure-guidance"> Ministry of Defence Form 680 guidance (opens in new tab)</a></p>
 
-        <p><a href="https://www.gov.uk/government/publications/government-security-classifications"> Guidance on government security gradings (opens in new tab)</a></p>
-
-        <p>The grading can sometimes include a prefix and suffix. There are many in use and so it is important that you know the full classification of the product.</p>
-
-        <p>If the product was developed with Ministry of Defence (MOD) funding you will find the grading in the Security Aspects Letter provided by the MOD project team.</p>
-
-        <p>If the product was developed with overseas government support, that government is responsible for providing the grading.</p>
-
-        <p>If the product was developed without UK or overseas government support, you should apply for a private venture grading using <a class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank" href="https://www.spire.trade.gov.uk">SPIRE</a>. The grading will be provided by MOD.</p>
-
+      <p>An F1686 is an approval to sub-contract or collaborate on protectively marked (classified) work.</p>
 
         </div>
         </details>
