@@ -17,11 +17,13 @@
 
       <p>Some security classified products need an approval form before they can be exported.</p>
 
-      <form class="form" action="/task-list-start" method="post">
+      <form class="form" action="/security-f1686" method="post">
 
-        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+        {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
 
         {% set f680Html %}
 {{ govukInput({
@@ -30,37 +32,28 @@
   spellcheck: false,
   classes: "govuk-!-width-two-third",
   label: {
-    text: "Enter the F680 reference number"
+    text: "Reference number"
   }
 }) }}
 {% endset -%}
 
 
 
-  {% set f1686Html %}
 
+{% set differentHtml %}
 {{ govukInput({
-  id: "ref",
-  name: "f1686_authority",
-  spellcheck: false,
-  classes: "govuk-!-width-two-third",
-  label: {
-    text: "Who is the contracting authority or signatory?"
-  }
+id: "differentref",
+name: "differentref",
+spellcheck: false,
+classes: "govuk-!-width-two-third",
+label: {
+text: "Provide details"
+}
 }) }}
-
-{{ govukFileUpload({
-  id: "file-upload-f1686",
-  name: "file-upload-1",
-  label: {
-    text: "Upload the approval document (optional)"
-  }
-}) }}
-
 {% endset -%}
 
 
-        {{ govukRadios({
+        {{ govukCheckboxes({
           idPrefix: "security-grading",
 name: "security-grading",
 fieldset: {
@@ -88,6 +81,13 @@ fieldset: {
               conditional: {
               html: f1686Html
             }
+            },
+            {
+              value: "different",
+              text: "Yes, I have a different approval",
+              conditional: {
+              html: differentHtml
+            }
             }
           ]
         }) }}
@@ -99,8 +99,8 @@ fieldset: {
         </span>
         </summary>
         <div class="govuk-details__text">
-      <p>Exporters must obtain MOD Form 680 approval in order to release information or equipment classified Official-senstive and above to foreign entities.</p>
-      <p><a href="https://www.gov.uk/government/publications/ministry-of-defence-form-680-procedure-guidance"> Ministry of Defence Form 680 guidance (opens in new tab)</a></p>
+      <p>Exporters must obtain a Ministry of Defence (MOD) Form 680 approval in order to release information or equipment classified Official-sensitive and above to foreign entities.</p>
+      <p><a href="https://www.gov.uk/government/publications/ministry-of-defence-form-680-procedure-guidance"> MOD Form 680 guidance (opens in new tab)</a></p>
 
       <p>An F1686 is an approval to sub-contract or collaborate on protectively marked (classified) work.</p>
 

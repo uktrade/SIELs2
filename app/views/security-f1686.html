@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/security-approval">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Provide details of your F1686 approval</h1>
+
+      <form class="form" action="/task-list-start" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+        {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+
+
+{{ govukInput({
+  id: "authority",
+  name: "f1686_authority",
+  spellcheck: false,
+  classes: "govuk-!-width-two-third",
+  label: {
+    text: "Who is the contracting authority (or signatory and job role)?"
+  }
+}) }}
+
+
+{% set upload_noHtml %}
+
+{{ govukInput({
+  id: "f1686_ref",
+  name: "f1686_ref",
+  spellcheck: false,
+  classes: "govuk-!-width-two-third",
+  label: {
+    text: "Reference number"
+  }
+}) }}
+
+
+{{ govukDateInput({
+  id: "f1686_date",
+  namePrefix: "f1686_date",
+  fieldset: {
+    legend: {
+      text: "Approval date"
+    }
+  },
+  hint: {
+    text: "For example, 27 3 2020"
+  }
+}) }}
+
+
+{% endset -%}
+
+
+{% set upload_yesHtml %}
+
+{{ govukFileUpload({
+  id: "file-upload-f1686",
+  name: "file-upload-1",
+  label: {
+    text: "Upload the approval document"
+  }
+}) }}
+
+{% endset -%}
+
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+  idPrefix: "upload_yes_no",
+  name: "upload_yes_no",
+  fieldset: {
+    legend: {
+      text: "Do you have an approval document to upload?"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: upload_yesHtml
+      }
+    },
+    {
+      value: "no",
+      text: "No",
+      conditional: {
+        html: upload_noHtml
+      }
+    }
+  ]
+}) }}
+
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
