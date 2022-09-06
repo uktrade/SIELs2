@@ -15,45 +15,47 @@
 
       <h1 class="govuk-heading-xl">Do you have a Ministry of Defence security approval?</h1>
 
-      <p>Some security classified products need an approval before they can be exported.</p>
+      <p>Some security classified products need an approval (such as F680 or F1686) before they can be exported.</p>
 
       <form class="form" action="/security-f1686" method="post">
 
-      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
         {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
 
-        {% set f680Html %}
-{{ govukInput({
-  id: "f680ref",
-  name: "f680ref",
-  spellcheck: false,
-  classes: "govuk-!-width-two-third",
-  label: {
-    text: "Reference number"
-  }
-}) }}
-{% endset -%}
-
-
-
-
-{% set differentHtml %}
-{{ govukInput({
-id: "differentref",
-name: "differentref",
-spellcheck: false,
-classes: "govuk-!-width-two-third",
-label: {
-text: "Provide details"
-}
-}) }}
-{% endset -%}
-
-
+        {% set yesHtml %}
         {{ govukCheckboxes({
+          idPrefix: "security-grading",
+      name: "security-grading",
+      fieldset: {
+      legend: {
+        text: "What type of approval do you have?",
+        isPageHeading: true
+      }
+    },
+
+        items: [
+            {
+              value: "f680",
+              text: "F680"
+            },
+            {
+              value: "f1686",
+              text: "F1686"
+            },
+            {
+              value: "other",
+              text: "Other"
+            }
+          ]
+        }) }}
+
+{% endset -%}
+
+
+              {{ govukRadios({
           idPrefix: "security-grading",
 name: "security-grading",
 fieldset: {
@@ -66,29 +68,16 @@ fieldset: {
         items: [
         {
             value: "No",
-            text: "No, I don't need an approval for my products"
+            text: "No"
           },
             {
-              value: "f680",
-              text: "Yes, I have an F680 approval",
+              value: "yes",
+              text: "Yes",
               conditional: {
-              html: f680Html
+                html: yesHtml
+              }
             }
-            },
-            {
-              value: "f1686",
-              text: "Yes, I have an F1686 approval",
-              conditional: {
-              html: f1686Html
-            }
-            },
-            {
-              value: "different",
-              text: "Yes, I have a different approval",
-              conditional: {
-              html: differentHtml
-            }
-            }
+
           ]
         }) }}
 
