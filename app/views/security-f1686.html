@@ -15,7 +15,7 @@
 
       <h1 class="govuk-heading-xl">Provide details of your F1686 approval</h1>
 
-      <form class="form" action="/task-list-start" method="post">
+      <form class="form" action="/journey-summary" method="post">
 
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
         {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -31,7 +31,7 @@
   spellcheck: false,
   classes: "govuk-!-width-two-third",
   label: {
-    text: "Who is the contracting authority (or signatory and job role)?"
+    text: "Who is the contracting authority (or signatory and job role) for your F1686 approval?"
   }
 }) }}
 
@@ -44,7 +44,7 @@
   spellcheck: false,
   classes: "govuk-!-width-two-third",
   label: {
-    text: "Reference number"
+    text: "What is the F1686 reference number?"
   }
 }) }}
 
@@ -54,7 +54,7 @@
   namePrefix: "f1686_date",
   fieldset: {
     legend: {
-      text: "Approval date"
+      text: "When was the F1686 approved?"
     }
   },
   hint: {
@@ -72,7 +72,7 @@
   id: "file-upload-f1686",
   name: "file-upload-1",
   label: {
-    text: "Upload the approval document"
+    text: "Upload the F1686 approval document"
   }
 }) }}
 
@@ -87,7 +87,7 @@
   name: "upload_yes_no",
   fieldset: {
     legend: {
-      text: "Do you have an approval document to upload?"
+      text: "Do you have an F1686 approval document to upload?"
     }
   },
   items: [

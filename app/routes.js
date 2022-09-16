@@ -1507,5 +1507,28 @@ router.post('/products-1-categories-2-answer', function (req, res) {
 
 
 
+      // Run this code when a form is submitted to 'security-approval-v2'
+      router.post('/security-approval-v2-answer', function (req, res) {
+
+        // Make a variable and give it the value from 'security-approval-v2'
+        var securityapproval = req.session.data['security-approval']
+
+        // Check whether the variable matches a condition
+        if (securityapproval == "f680"){
+          // Send user to next page
+          res.redirect('/security-f680')
+        }
+        if (securityapproval == "f1686"){
+          // Send user to next page
+          res.redirect('/security-f1686')
+        }
+        if (securityapproval == "other"){
+          // Send user to next page
+          res.redirect('/security-other')
+        }
+        })
+
+
+
 
 module.exports = router
