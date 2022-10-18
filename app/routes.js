@@ -1520,11 +1520,11 @@ router.post('/products-1-categories-2-answer', function (req, res) {
         }
         if (securityapproval == "f1686"){
           // Send user to next page
-          res.redirect('/security-f1686')
+          res.redirect('/security-f1686-c5')
         }
         if (securityapproval == "other"){
           // Send user to next page
-          res.redirect('/security-other')
+          res.redirect('/security-other-c5')
         }
         })
 
